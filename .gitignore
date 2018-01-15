@@ -1,0 +1,14 @@
+*
+!*/
+!/README.md
+!/.gitignore
+!/composer.json
+!/composer.lock
+!/favicon.ico
+!/robots.txt
+!/assets/Private/Sass/**
+!/.editorconfig
+!/guplfile.js
+!/package.json
+!/index.php
+/assets/Public/**/*.css

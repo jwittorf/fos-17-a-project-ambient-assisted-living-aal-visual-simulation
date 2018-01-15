@@ -1,0 +1,36 @@
+// this is the main stylesheet
+// everything written here will be compiled into a single main.css file
+// use this file only to include other files to respect their concrete usage
+
+// import some variables first, that are used inside bootstrap's variables file
+// this way we depended variables like $link-color: $brand-primary get resolved correctly
+@import "bootstrap-override";
+
+// include bootstrap variables before our variables, so we can use them in our variables
+// because our variables don't have !default they can overwrite these variables
+@import "vendor/bootstrap/variables";
+
+// our own variables, we can use bootstrap variables, too. e.g. $myvar = $screen-md-min;
+// (this wouldn't be possible without loading bootstrap before)
+// the bootstrap variables are imported a second time below but will not "override" our variables
+// because bootstrap variables have !default (= only write/"override" if not already set)
+@import "variables";
+
+// put all custom fonts from Google, etc. into the _fonts.scss file
+// this way it's only included once and also available before everything else is loaded
+@import "fonts";
+
+// in case we use bootstrap (and we do) let's include it
+// if we don't want to use our own bootstrap, we can include bootstrap via cdn from nws-scaffolding
+// just comment out the removal of bootstrap from nws_scaffolding
+// in EXT:nws_template/Configuration/TypoScript/Setup/Page/Assets/Stylesheets.ts
+@import "vendor/bootstrap";
+
+// all styles for elements without further specifications (no class or id)
+@import "globals";
+
+// components (everthing with a class)
+// @import "components/XXX";
+
+// layout related stuff (everything that has an #id)
+//@import "layout/XXX";
