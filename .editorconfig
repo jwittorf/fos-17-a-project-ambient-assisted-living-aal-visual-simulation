@@ -9,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 
 # Tab indentation (no size specified)
-[*.{html,php,js}]
+[*.{html,php,js,scss}]
 indent_style = tab
 indent_size = 4
 

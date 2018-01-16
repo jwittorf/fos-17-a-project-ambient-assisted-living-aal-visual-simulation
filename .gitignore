@@ -14,5 +14,5 @@
 !/gulpfile.js
 !/package.json
 !/web/*.php
-!/web/*.html
+!/web/**/*.html
 /web/assets/**/*.css

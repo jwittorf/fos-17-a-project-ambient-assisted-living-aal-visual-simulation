@@ -11,7 +11,30 @@
 </head>
 <body>
 <div class="container">
-	<div class="kitchen-content ajax-content">
+	<div class="row">
+		<div class="col-xs-9">
+			<div class="kitchen-content ajax-content">
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<h1>Control</h1>
+			<h2>Kitchen</h2>
+			<h3>Stove</h3>
+			<ul>
+				<li>
+					<button class="btn btn-default kitchen-stove-control" id="kitchen-stove-control-one" data-target="#kitchen-stove-hotplate-one">One</button>
+				</li>
+				<li>
+					<button class="btn btn-default kitchen-stove-control" id="kitchen-stove-control-two" data-target="#kitchen-stove-hotplate-two">Two</button>
+				</li>
+				<li>
+					<button class="btn btn-default kitchen-stove-control" id="kitchen-stove-control-three" data-target="#kitchen-stove-hotplate-three">Three</button>
+				</li>
+				<li>
+					<button class="btn btn-default kitchen-stove-control" id="kitchen-stove-control-four" data-target="#kitchen-stove-hotplate-four">Four</button>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
