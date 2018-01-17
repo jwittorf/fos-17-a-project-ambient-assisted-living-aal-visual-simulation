@@ -1,26 +1,27 @@
 {
-    "name": "@jwittorf/fos-projekt",
-    "version": "1.0.0",
-    "private": true,
-    "engines": {
-        "node": ">=4.0.0"
-    },
-    "scripts": {
-        "postinstall": "gulp setup"
-    },
-    "author": "Julian Wittorf <jwittorf@die-netzwerkstatt.de>",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^3.1.1",
-        "gulp-filter": "^4.0.0",
-        "gulp-livereload": "^3.8.1",
-        "gulp-sass": "^2.3.2",
-        "gulp-sourcemaps": "^1.6.0",
-        "merge-stream": "^1.0.0"
-    },
-    "dependencies": {
-        "bootstrap-sass": "^3.3.7",
-        "enquire.js": "^2.1.6",
-        "jquery": "^2.2.4"
-    }
+  "name": "@jwittorf/fos-projekt",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "postinstall": "gulp setup"
+  },
+  "author": "Julian Wittorf <jwittorf@die-netzwerkstatt.de>",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "merge-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "enquire.js": "^2.1.6",
+    "jquery": "^2.2.4",
+    "jquery-toggles": "^4.0.0"
+  }
 }

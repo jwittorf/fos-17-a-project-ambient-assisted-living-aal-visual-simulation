@@ -28,10 +28,16 @@ gulp.task('install-assets', function () {
 	var js = gulp.src([
 		'node_modules/jquery/dist/jquery.js',
 		'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
-		'node_modules/enquire.js/dist/enquire.min.js'
+		'node_modules/enquire.js/dist/enquire.min.js',
+		'node_modules/jquery-toggles/toggles.min.js'
 	]).pipe(gulp.dest('web/assets/Javascripts/vendor'));
 
-	return merge_streams(sass, fonts, js);
+	// jQuery Toggles Stylesheets
+	var css_toggles = gulp.src([
+		'node_modules/jquery-toggles/css/**/*'
+	]).pipe(gulp.dest('web/assets/Stylesheets/vendor/toggles'));
+
+	return merge_streams(sass, fonts, js, css_toggles);
 });
 
 /**

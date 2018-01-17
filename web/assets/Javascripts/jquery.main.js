@@ -24,7 +24,7 @@
 				console.log(msg + xhr.status + " " + xhr.statusText);
 			}
 		});
-	}
+	};
 
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++
@@ -32,11 +32,29 @@
 	 * +++++++++++++++++++++++++++++++++++++++++++
 	 */
 	FOS.initControlSection = function () {
-		$(".kitchen-stove-control").click(function () {
+		$('.toggle').on('toggle', function(e, active) {
 			var target = $(this).data("target");
-			$(".kitchen-stove-hotplate").removeClass("alert-danger");
-			$(target).addClass("alert-danger");
-		})
+			if (active) {
+				$(target).addClass("alert-success");
+			} else {
+				$(target).removeClass("alert-success");
+			}
+		});
+	};
+
+	/**
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 * ++ Toggles
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 */
+	FOS.initToggles = function () {
+		$('.toggle').toggles({
+			drag: false,
+			text: {
+				on: 'AN',
+				off: 'AUS'
+			}
+		});
 	};
 
 }(window.FOS = window.FOS || {}, jQuery));
