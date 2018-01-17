@@ -3,8 +3,11 @@
 	$(function () {
 		//FOS.initSomeComponent();
 		FOS.initAjaxKitchen();
-		FOS.initControlSection();
+		FOS.initToggleVars();
 		FOS.initToggles();
+		FOS.initControlSectionLocal();
+		FOS.initControlSectionGlobalReset();
+		FOS.initControlSectionGlobalSet();
 	});
 
 }(window.FOS = window.FOS || {}, jQuery));

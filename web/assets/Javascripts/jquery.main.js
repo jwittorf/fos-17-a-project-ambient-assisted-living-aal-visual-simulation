@@ -28,18 +28,13 @@
 
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++
-	 * ++ Control section
+	 * ++ Init variables for toggles
 	 * +++++++++++++++++++++++++++++++++++++++++++
 	 */
-	FOS.initControlSection = function () {
-		$('.toggle').on('toggle', function(e, active) {
-			var target = $(this).data("target");
-			if (active) {
-				$(target).addClass("alert-success");
-			} else {
-				$(target).removeClass("alert-success");
-			}
-		});
+	FOS.initToggleVars = function () {
+		statusControlSectionLocal = false;
+		$toggleLocalControl = $(".toggle-local-control");
+		$globalSetIcon = $("#global-set-icon");
 	};
 
 	/**
@@ -48,13 +43,103 @@
 	 * +++++++++++++++++++++++++++++++++++++++++++
 	 */
 	FOS.initToggles = function () {
-		$('.toggle').toggles({
+		$(".toggle").toggles({
 			drag: false,
 			text: {
-				on: 'AN',
-				off: 'AUS'
+				on: "AN",
+				off: "AUS"
 			}
 		});
+	};
+
+	/**
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 * ++ Control section local
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 */
+	FOS.initControlSectionLocal = function () {
+		// Check every local toggle on toggle event
+		$toggleLocalControl.on("toggle", function (e, active) {
+			// Specifiy target for single toggle
+			var target = $(this).data("target");
+			if (active) {
+				// Set target to active
+				$(target).addClass("alert-success");
+				// Enable global reset button
+				$("#global-control-reset").removeAttr("disabled");
+				// Set global status, that at least one toggle is active for the global set icon
+				statusControlSectionLocal = true;
+			} else {
+				// Set target to inactive
+				$(target).removeClass("alert-success");
+				// Run through all toggles and check if at least one toggle is active for the global set icon
+				$toggleLocalControl.each(function () {
+					if ($(this).data("toggles").active === true) {
+						statusControlSectionLocal = true;
+						// Abort the loop because one active toggle is enough for the global set icon
+						return false;
+					} else {
+						// Continue loop and eventually end the loop if one/all toggles are inactive
+						statusControlSectionLocal = false;
+					}
+				});
+				if (statusControlSectionLocal === false) {
+					$("#global-control-reset").attr("disabled", "disabled");
+				}
+			}
+		});
+	};
+
+	/**
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 * ++ Control section global reset
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 */
+	FOS.initControlSectionGlobalReset = function () {
+		$("#global-control-reset").on("click", function () {
+			$toggleLocalControl.each(function () {
+				$(this).data("toggles").toggle(false);
+			});
+			$("#global-control-reset").attr("disabled", "disabled");
+		});
+	};
+
+	/**
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 * ++ Control section global set
+	 * +++++++++++++++++++++++++++++++++++++++++++
+	 */
+	FOS.initControlSectionGlobalSet = function () {
+		// Check for existing fields
+		if (statusControlSectionLocal === true) {
+			$globalSetIcon.addClass("text-danger");
+		}
+		// Check for fields after activation
+		$toggleLocalControl.on("toggle", function () {
+			if (statusControlSectionLocal === true) {
+				$globalSetIcon.addClass("text-danger");
+			} else {
+				$globalSetIcon.removeClass("text-danger");
+			}
+		});
+		// $("#global-control-set").on("toggle", function (e, active) {
+		// 	if (active) {
+		// 		// Check for existing fields
+		// 		if (statusControlSectionLocal === true) {
+		// 			$globalSetIcon.addClass("text-danger");
+		// 		}
+		// 		// Check for fields after activation
+		// 		$toggleLocalControl.on("toggle", function () {
+		// 			if (statusControlSectionLocal === true) {
+		// 				$globalSetIcon.addClass("text-danger");
+		// 			} else {
+		// 				$globalSetIcon.removeClass("text-danger");
+		// 			}
+		// 		});
+		// 	} else {
+		// 		$globalSetIcon.removeClass("text-danger");
+		// 	}
+		// });
 	};
 
 }(window.FOS = window.FOS || {}, jQuery));

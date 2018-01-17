@@ -32,7 +32,8 @@
 // components (everthing with a class)
 //@import "components/XXX";
 @import "components/kitchen/stove";
-@import "components/vendor/toggles";
+@import "components/toggles";
 
 // layout related stuff (everything that has an #id)
 //@import "layout/XXX";
+@import "layout/global-set";

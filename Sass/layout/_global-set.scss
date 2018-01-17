@@ -1,0 +1,13 @@
+#global-set {
+	.btn {
+		cursor: default;
+		&:hover {
+			background-color: $btn-default-bg;
+			color: $btn-default-color;
+			border-color: $btn-default-border;
+		}
+		&:active {
+			box-shadow: none;
+		}
+	}
+}

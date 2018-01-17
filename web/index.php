@@ -46,6 +46,7 @@
 			</div>
 			<div class="col-xs-3">
 				<h2>Kontrollbereich</h2>
+				<h3>Lokale Kontrollelemente</h3>
 				<div class="panel-group" id="control-panel" role="tablist" aria-multiselectable="true">
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="control-panel-heading-one">
@@ -65,9 +66,10 @@
 										<div class="row">
 											<div class="col-xs-7">Backofen</div>
 											<div class="col-xs-5">
-												<div class="toggle toggle-light kitchen-stove-control"
-													 id="kitchen-stove-control-oven-one"
-													 data-target="#kitchen-stove-oven-one"></div>
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-stove-control"
+													id="kitchen-stove-control-oven-one"
+													data-target="#kitchen-stove-oven-one"></div>
 											</div>
 										</div>
 									</li>
@@ -75,9 +77,10 @@
 										<div class="row">
 											<div class="col-xs-7">Herdplatte 1</div>
 											<div class="col-xs-5">
-												<div class="toggle toggle-light kitchen-stove-control"
-													 id="kitchen-stove-control-hotplate-one"
-													 data-target="#kitchen-stove-hotplate-one"></div>
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-stove-control"
+													id="kitchen-stove-control-hotplate-one"
+													data-target="#kitchen-stove-hotplate-one"></div>
 											</div>
 										</div>
 									</li>
@@ -85,9 +88,10 @@
 										<div class="row">
 											<div class="col-xs-7">Herdplatte 2</div>
 											<div class="col-xs-5">
-												<div class="toggle toggle-light kitchen-stove-control"
-													 id="kitchen-stove-control-hotplate-two"
-													 data-target="#kitchen-stove-hotplate-two"></div>
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-stove-control"
+													id="kitchen-stove-control-hotplate-two"
+													data-target="#kitchen-stove-hotplate-two"></div>
 											</div>
 										</div>
 									</li>
@@ -95,9 +99,10 @@
 										<div class="row">
 											<div class="col-xs-7">Herdplatte 3</div>
 											<div class="col-xs-5">
-												<div class="toggle toggle-light kitchen-stove-control"
-													 id="kitchen-stove-control-hotplate-three"
-													 data-target="#kitchen-stove-hotplate-three"></div>
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-stove-control"
+													id="kitchen-stove-control-hotplate-three"
+													data-target="#kitchen-stove-hotplate-three"></div>
 											</div>
 										</div>
 									</li>
@@ -105,9 +110,10 @@
 										<div class="row">
 											<div class="col-xs-7">Herdplatte 4</div>
 											<div class="col-xs-5">
-												<div class="toggle toggle-light kitchen-stove-control"
-													 id="kitchen-stove-control-hotplate-four"
-													 data-target="#kitchen-stove-hotplate-four"></div>
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-stove-control"
+													id="kitchen-stove-control-hotplate-four"
+													data-target="#kitchen-stove-hotplate-four"></div>
 											</div>
 										</div>
 									</li>
@@ -150,6 +156,57 @@
 						</div>
 					</div>
 				</div>
+				<h3>Globale Kontrollelemente</h3>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-12">
+								<button type="button" class="btn btn-danger btn-block" id="global-control-reset"
+										disabled>
+									Not-Aus
+								</button>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-12">
+								<div id="global-set">
+									<h4>Prüfung auf Aktivität</h4>
+									<span class="btn btn-default">Status: <i class="glyphicon glyphicon-alert"
+																			 id="global-set-icon"></i></span>
+								</div>
+							</div>
+						</div>
+						<!--
+						div class="row">
+							<div class="col-xs-8">
+								<div class="row">
+									<div class="col-xs-6">
+										Aktivieren
+									</div>
+									<div class="col-xs-6">
+										<div class="toggle toggle-light toggle-global-control"
+											 id="global-control-set"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<div class="row">
+									<div class="col-xs-6">
+										Status
+									</div>
+									<div class="col-xs-6">
+										<div id="global-set">
+											<i class="glyphicon glyphicon-alert"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						-->
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
