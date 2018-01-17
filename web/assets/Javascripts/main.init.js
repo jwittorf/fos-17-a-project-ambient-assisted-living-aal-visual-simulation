@@ -2,12 +2,12 @@
 
 	$(function () {
 		//FOS.initSomeComponent();
-		FOS.initAjaxKitchen();
+		FOS.initAjax();
 		FOS.initToggleVars();
 		FOS.initToggles();
 		FOS.initControlSectionLocal();
 		FOS.initControlSectionGlobalReset();
-		FOS.initControlSectionGlobalSet();
+		// FOS.initControlSectionGlobalSet();
 	});
 
 }(window.FOS = window.FOS || {}, jQuery));

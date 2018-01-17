@@ -89,6 +89,12 @@
 					$("#global-control-reset").attr("disabled", "disabled");
 				}
 			}
+			// Add/remove class for global set icon depending on the toggles' status
+			if (statusControlSectionLocal === true) {
+				$globalSetIcon.addClass(globalSetIconClass);
+			} else {
+				$globalSetIcon.removeClass(globalSetIconClass);
+			}
 		});
 	};
 
@@ -100,8 +106,10 @@
 	FOS.initControlSectionGlobalReset = function () {
 		$("#global-control-reset").on("click", function () {
 			$toggleLocalControl.each(function () {
+				// Reset all local toggles
 				$(this).data("toggles").toggle(false);
 			});
+			// Disable reset button after clicking it
 			$("#global-control-reset").attr("disabled", "disabled");
 		});
 	};
@@ -109,39 +117,28 @@
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++
 	 * ++ Control section global set
+	 * ** (old, used with own toggle)
 	 * +++++++++++++++++++++++++++++++++++++++++++
 	 */
 	FOS.initControlSectionGlobalSet = function () {
-		// Check for existing fields
-		if (statusControlSectionLocal === true) {
-			$globalSetIcon.addClass(globalSetIconClass);
-		}
-		// Check for fields after activation
-		$toggleLocalControl.on("toggle", function () {
-			if (statusControlSectionLocal === true) {
-				$globalSetIcon.addClass(globalSetIconClass);
+		$("#global-control-set").on("toggle", function (e, active) {
+			if (active) {
+				// Check for existing fields
+				if (statusControlSectionLocal === true) {
+					$globalSetIcon.addClass(globalSetIconClass);
+				}
+				// Check for fields after activation
+				$toggleLocalControl.on("toggle", function () {
+					if (statusControlSectionLocal === true) {
+						$globalSetIcon.addClass(globalSetIconClass);
+					} else {
+						$globalSetIcon.removeClass(globalSetIconClass);
+					}
+				});
 			} else {
 				$globalSetIcon.removeClass(globalSetIconClass);
 			}
 		});
-		// $("#global-control-set").on("toggle", function (e, active) {
-		// 	if (active) {
-		// 		// Check for existing fields
-		// 		if (statusControlSectionLocal === true) {
-		// 			$globalSetIcon.addClass(globalSetIconClass);
-		// 		}
-		// 		// Check for fields after activation
-		// 		$toggleLocalControl.on("toggle", function () {
-		// 			if (statusControlSectionLocal === true) {
-		// 				$globalSetIcon.addClass(globalSetIconClass);
-		// 			} else {
-		// 				$globalSetIcon.removeClass(globalSetIconClass);
-		// 			}
-		// 		});
-		// 	} else {
-		// 		$globalSetIcon.removeClass(globalSetIconClass);
-		// 	}
-		// });
 	};
 
 }(window.FOS = window.FOS || {}, jQuery));
