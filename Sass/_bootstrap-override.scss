@@ -10,6 +10,7 @@ $icon-font-path: "../Fonts/vendor/bootstrap/";
 
 // Brand-colors
 $brand-primary: #0d0f21;
+$brand-danger: #aa1212;
 //$brand-success: ;
 //$brand-info: ;
 
@@ -28,3 +29,6 @@ $brand-primary: #0d0f21;
 //$link-color: $brand-primary !default;
 //$link-hover-color: darken($link-color, 15%) !default;
 //$link-hover-decoration: underline !default;
+
+$state-danger-text : darken($brand-danger, 10%);
+$state-danger-bg: $brand-danger;

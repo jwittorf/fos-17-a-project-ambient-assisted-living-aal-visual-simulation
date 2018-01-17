@@ -34,7 +34,9 @@
 	FOS.initToggleVars = function () {
 		statusControlSectionLocal = false;
 		$toggleLocalControl = $(".toggle-local-control");
+		toggleLocalClass = "alert-danger";
 		$globalSetIcon = $("#global-set-icon");
+		globalSetIconClass = "text-danger";
 	};
 
 	/**
@@ -64,14 +66,14 @@
 			var target = $(this).data("target");
 			if (active) {
 				// Set target to active
-				$(target).addClass("alert-success");
+				$(target).addClass(toggleLocalClass);
 				// Enable global reset button
 				$("#global-control-reset").removeAttr("disabled");
 				// Set global status, that at least one toggle is active for the global set icon
 				statusControlSectionLocal = true;
 			} else {
 				// Set target to inactive
-				$(target).removeClass("alert-success");
+				$(target).removeClass(toggleLocalClass);
 				// Run through all toggles and check if at least one toggle is active for the global set icon
 				$toggleLocalControl.each(function () {
 					if ($(this).data("toggles").active === true) {
@@ -112,32 +114,32 @@
 	FOS.initControlSectionGlobalSet = function () {
 		// Check for existing fields
 		if (statusControlSectionLocal === true) {
-			$globalSetIcon.addClass("text-danger");
+			$globalSetIcon.addClass(globalSetIconClass);
 		}
 		// Check for fields after activation
 		$toggleLocalControl.on("toggle", function () {
 			if (statusControlSectionLocal === true) {
-				$globalSetIcon.addClass("text-danger");
+				$globalSetIcon.addClass(globalSetIconClass);
 			} else {
-				$globalSetIcon.removeClass("text-danger");
+				$globalSetIcon.removeClass(globalSetIconClass);
 			}
 		});
 		// $("#global-control-set").on("toggle", function (e, active) {
 		// 	if (active) {
 		// 		// Check for existing fields
 		// 		if (statusControlSectionLocal === true) {
-		// 			$globalSetIcon.addClass("text-danger");
+		// 			$globalSetIcon.addClass(globalSetIconClass);
 		// 		}
 		// 		// Check for fields after activation
 		// 		$toggleLocalControl.on("toggle", function () {
 		// 			if (statusControlSectionLocal === true) {
-		// 				$globalSetIcon.addClass("text-danger");
+		// 				$globalSetIcon.addClass(globalSetIconClass);
 		// 			} else {
-		// 				$globalSetIcon.removeClass("text-danger");
+		// 				$globalSetIcon.removeClass(globalSetIconClass);
 		// 			}
 		// 		});
 		// 	} else {
-		// 		$globalSetIcon.removeClass("text-danger");
+		// 		$globalSetIcon.removeClass(globalSetIconClass);
 		// 	}
 		// });
 	};

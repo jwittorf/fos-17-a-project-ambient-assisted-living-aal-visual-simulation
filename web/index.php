@@ -161,7 +161,7 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-xs-12">
-								<button type="button" class="btn btn-danger btn-block" id="global-control-reset"
+								<button type="button" class="btn btn-danger btn-block transition" id="global-control-reset"
 										disabled>
 									Not-Aus
 								</button>
@@ -173,7 +173,7 @@
 							<div class="col-xs-12">
 								<div id="global-set">
 									<h4>Prüfung auf Aktivität</h4>
-									<span class="btn btn-default">Status: <i class="glyphicon glyphicon-alert"
+									<span class="btn btn-default transition">Status: <i class="glyphicon glyphicon-alert"
 																			 id="global-set-icon"></i></span>
 								</div>
 							</div>
