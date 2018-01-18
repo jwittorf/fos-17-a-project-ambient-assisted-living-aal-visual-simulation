@@ -1,26 +1,16 @@
-# README file for developers
-
 * Please follow the following instructions to ensure a correct workflow.
 * Also keep this file updated for your own good.
 * This is a work in progress document.
 
+# Features/requirements and how to implement them
 
-
-## Features/requirements and how to implement them
-
-
-
-
-### Default toggles
-
+## Default toggles
 Define toggles to be active by default for e.g. devices needing constant electricity
 
 #### What you need:
-
 * Add the id of the toggle's `data-target` to the `defaultTogglesOn` array
 
 #### Example:
-
 ```js
 defaultTogglesOn = [
     "#kitchen-stove-control-hotplate-two",
@@ -28,41 +18,34 @@ defaultTogglesOn = [
 ];
 ```
 
-
+---------------------------------------
 
 
 ### Exclude toggles from global reset
-
 Define toggles not to be reset by the global reset button, e.g. devices needing constant electricity
 
 #### What you need:
-
 * Add the id of the toggle's `data-target` to the `globalControlResetExclude` array
 
 #### Example:
-
 ```js
 globalControlResetExclude = [
     "#kitchen-stove-control-hotplate-two"
 ];
 ```
 
+---------------------------------------
 
 
-
-### Global station
-
+## Global station
 Shows if at least one toggle is active in the specified section
 
 #### What you need:
-
 * On all new `toggle-local-control` elements make sure to follow the markup and add a correct `data-group`.
 	* The `data-group` needs to be the same in the entire section!
 * That's it, the script will take care of everything else.
 
-
 #### Example:
-
 ```html
 <div
 class="toggle toggle-light toggle-local-control kitchen-stove-control"
@@ -71,14 +54,21 @@ data-target="#kitchen-stove-hotplate-one"
 data-group="station-group-kitchen"></div>
 ```
 
+---------------------------------------
 
 
-
-### Emergency toggle
-
+## Emergency toggle
+* In every section should be an emergency toggle.
+* Activating it opens a modal (popup) with a warning message.
+* After closing the modal
+	* The area starts to blink
+	* An entry is added to the log area
+* If a different emergency toggle is triggered, the message from the toggle before will still show up in the modal!
+* To remove the blinking and the "old" messages from the modal, just disable to activated toggle.
+	* There will also be a new entry in the log, claiming the emergency has been resolved.
+* 
 
 #### What you need:
-
 * wrapping class: `[section]-emergency-content`
 * wrapping id for name/heading: `[section]-emergency-name`
 * `toggle` element with
@@ -89,7 +79,6 @@ data-group="station-group-kitchen"></div>
 
 
 #### Example:
-
 ```html
 <div class="kitchen-emergency-content">
     <div class="row">
@@ -106,14 +95,3 @@ data-group="station-group-kitchen"></div>
     </div>
 </div>
 ```
-
-
-#### What it also does:
-
-* Opens a modal (popup with a warning message)
-* Writes the warning message into a log area
-* Makes the area blink after closing the modal
-* After disabling the toggle again (aka problem fixed) it will
-	* Remove the message from the modal (would show on next activation of maybe a different toggle if not deactivated/fixed before)
-	* Add a success message to the log
-	* Stop blinking (finally)
