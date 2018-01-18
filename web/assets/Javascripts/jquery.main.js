@@ -3,14 +3,14 @@
  */
 (function (FOS, $, undefined) {
 
-	/**
-	 * +++++++++++++++++++++++++++++++++++++++++++
-	 * ++ Some Component
-	 * +++++++++++++++++++++++++++++++++++++++++++
-	 */
-	FOS.initSomeComponent = function () {
-		// Start writing the code for your component
-	};
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Some Component
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.initSomeComponent = function () {
+			// Start writing the code for your component
+		};
 
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++
@@ -39,20 +39,20 @@
 		globalSetIconClass = "text-danger";
 	};
 
-	/**
-	 * +++++++++++++++++++++++++++++++++++++++++++
-	 * ++ Toggles
-	 * +++++++++++++++++++++++++++++++++++++++++++
-	 */
-	FOS.initToggles = function () {
-		$(".toggle").toggles({
-			drag: false,
-			text: {
-				on: "AN",
-				off: "AUS"
-			}
-		});
-	};
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Init toggles, base configuration
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.initToggles = function () {
+			$(".toggle").toggles({
+				drag: false,
+				text: {
+					on: "AN",
+					off: "AUS"
+				}
+			});
+		};
 
 	/**
 	 * +++++++++++++++++++++++++++++++++++++++++++
@@ -141,4 +141,5 @@
 		});
 	};
 
-}(window.FOS = window.FOS || {}, jQuery));
+	}(window.FOS = window.FOS || {}, jQuery)
+);
