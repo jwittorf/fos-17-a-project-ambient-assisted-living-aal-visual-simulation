@@ -1,0 +1,11 @@
+#hallway-station {
+	.hallway-station-lamp {
+		border: $kitchen-stove-border;
+		content: "";
+		border-radius: 50%;
+		display: inline-block;
+		margin-top: calc(25px / 2);
+		width: 25px;
+		height: 25px;
+	}
+}

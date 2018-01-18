@@ -7,6 +7,7 @@
 		FOS.initToggles();
 		FOS.initControlSectionLocal();
 		FOS.initControlSectionGlobalReset();
+		FOS.initLocalEmergency();
 		// FOS.initControlSectionGlobalSet();
 	});
 

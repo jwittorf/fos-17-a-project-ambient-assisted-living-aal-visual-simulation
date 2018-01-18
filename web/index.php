@@ -25,14 +25,38 @@
 					</div>
 					<div class="col-xs-2">
 						<!-- Hallway -->
-						<div class="hallway-content ajax-content">
+						<div class="hallway-content">
+							<div class="station">
+								<div class="hallway-station-content ajax-content"></div>
+							</div>
 						</div>
 					</div>
 					<div class="col-xs-5">
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- Kitchen -->
-								<div class="kitchen-content ajax-content">
+								<div id="kitchen-content">
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="kitchen-emergency-content">
+												<div class="row">
+													<div class="col-xs-7">
+														<div id="kitchen-emergency-name">
+															Not-Taster Küche
+														</div>
+													</div>
+													<div class="col-xs-5">
+														<div class="toggle toggle-light toggle-local-emergency"
+															 id="kitchen-emergency" data-name="#kitchen-emergency-name"
+															 data-target="#kitchen-content"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="kitchen-stove-content ajax-content"></div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col-xs-12">
@@ -69,7 +93,8 @@
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-oven-one"
-													data-target="#kitchen-stove-oven-one"></div>
+													data-target="#kitchen-stove-oven-one"
+													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
 									</li>
@@ -80,7 +105,8 @@
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-hotplate-one"
-													data-target="#kitchen-stove-hotplate-one"></div>
+													data-target="#kitchen-stove-hotplate-one"
+													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
 									</li>
@@ -91,7 +117,8 @@
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-hotplate-two"
-													data-target="#kitchen-stove-hotplate-two"></div>
+													data-target="#kitchen-stove-hotplate-two"
+													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
 									</li>
@@ -102,7 +129,8 @@
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-hotplate-three"
-													data-target="#kitchen-stove-hotplate-three"></div>
+													data-target="#kitchen-stove-hotplate-three"
+													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
 									</li>
@@ -113,7 +141,8 @@
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-hotplate-four"
-													data-target="#kitchen-stove-hotplate-four"></div>
+													data-target="#kitchen-stove-hotplate-four"
+													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
 									</li>
@@ -161,7 +190,8 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-xs-12">
-								<button type="button" class="btn btn-danger btn-block transition" id="global-control-reset"
+								<button type="button" class="btn btn-danger btn-block transition"
+										id="global-control-reset"
 										disabled>
 									Not-Aus
 								</button>
@@ -173,8 +203,9 @@
 							<div class="col-xs-12">
 								<div id="global-set">
 									<h4>Prüfung auf Aktivität</h4>
-									<span class="btn btn-default transition">Status: <i class="glyphicon glyphicon-alert"
-																			 id="global-set-icon"></i></span>
+									<span class="btn btn-default transition">Status: <i
+											class="glyphicon glyphicon-alert"
+											id="global-set-icon"></i></span>
 								</div>
 							</div>
 						</div>
@@ -207,6 +238,32 @@
 						-->
 					</li>
 				</ul>
+				<h3>Meldungen von Not-Tastern</h3>
+				<div id="global-emergency-messages">
+					<ul class="list-group">
+						<li class="list-group-item list-group-item-success">
+							<i class="glyphicon glyphicon-ok"></i> Keine Meldungen vorhanden!
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="emergency-message">
+	<div class="modal fade" tabindex="-1" role="dialog" id="emergency-message-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Meldung schließen"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Not-Taster betätigt!</h4>
+				</div>
+				<div class="modal-body">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Meldung schließen</button>
+				</div>
 			</div>
 		</div>
 	</div>

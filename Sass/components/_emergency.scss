@@ -1,0 +1,16 @@
+.emergency-blink {
+	animation: emergency-blink 1.5s infinite;
+	transition: none;
+}
+
+@-webkit-keyframes emergency-blink {
+	0%, 49% {
+		color: $state-danger-text;
+		background: $state-danger-bg;
+		border: 1px solid $state-danger-border;
+	}
+	50%, 100% {
+		background: #fff;
+		border: 1px solid #fff;
+	}
+}
