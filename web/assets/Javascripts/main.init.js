@@ -9,7 +9,6 @@
 		FOS.initControlSectionGlobalReset();
 		FOS.initLocalEmergency();
 		FOS.initGlobalTimer();
-		// FOS.initControlSectionGlobalSet();
 	});
 
 }(window.FOS = window.FOS || {}, jQuery));

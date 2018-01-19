@@ -13,64 +13,106 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-4">
-
-				</div>
-				<div class="col-xs-8">
-					<div id="global-timer">
-						<div class="form-horizontal">
-							<div class="input-group">
-								<span class="input-group-addon">
-									<i class="glyphicon glyphicon-time"></i>
-								</span>
-								<!-- Start field -->
-								<label for="global-timer-start" class="sr-only"> Start in Sekunden</label>
-								<span class="input-group-addon"><i class="glyphicon glyphicon-play"></i></span>
-								<input type="number" min="0" max="1000" class="form-control"
-									   aria-label="Zeitschaltuhr Start in Sekunden" id="global-timer-start"
-									   name="global-timer-start">
-								<!-- Stop field -->
-								<label for="global-timer-stop" class="sr-only"> Stop in Sekunden</label>
-								<span class="input-group-addon"><i class="glyphicon glyphicon-stop"></i></span>
-								<input type="number" min="0" max="1000" class="form-control"
-									   aria-label="Zeitschaltuhr Stop in Sekunden" id="global-timer-stop"
-									   name="global-timer-stop">
-								<!-- Set checkbox -->
-								<span class="input-group-addon">
-									<label
-										for="global-timer-set">Zeitschaltuhr aktivieren</label>
-									<input type="checkbox"
-										   id="global-timer-set"
-										   name="global-timer-set"
-										   value="global-timer-active"
-										   data-targetstart="#global-timer-start"
-										   data-targetstop="#global-timer-stop">
-								</span>
-								<!-- Reset button -->
-								<label for="global-timer-refresh" class="sr-only"> Neu laden</label>
-								<span class="input-group-btn"><button type="button" class="btn btn-default"><i
-											class="glyphicon glyphicon-refresh"
-											onClick="location.reload()"></i></button></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<h2>Wohnbereich und Schaltplan</h2>
+				<h3>Meldungen von Not-Tastern</h3>
+				<div id="global-emergency-messages">
+					<ul class="list-group">
+						<li class="list-group-item list-group-item-success">
+							<i class="glyphicon glyphicon-ok"></i> Keine Meldungen vorhanden!
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="row">
+							<div class="col-xs-12">
+								<!-- Hallway -->
+								<div class="hallway-content">
+									<div class="station">
+										<h3>Kontrollstation</h3>
+										<div class="hallway-station-content ajax-content"></div>
+										<hr>
+										<div class="row">
+											<div class="col-xs-6">
+												<button type="button" class="btn btn-danger btn-block transition"
+														id="global-control-reset"
+														disabled>
+													Not-Aus
+												</button>
+											</div>
+											<div class="col-xs-6">
+												<div id="global-set">
+														<span class="btn btn-default transition">Status: <i
+																class="glyphicon glyphicon-alert"
+																id="global-set-icon"></i></span>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col-xs-12">
+												<div id="global-timer">
+													<div class="form-horizontal">
+														<div class="input-group">
+															<span class="input-group-addon">
+																<i class="glyphicon glyphicon-time"></i>
+															</span>
+															<!-- Start field -->
+															<label for="global-timer-start" class="sr-only"> Start
+																in Sekunden</label>
+															<span class="input-group-addon"><i
+																	class="glyphicon glyphicon-play"></i></span>
+															<input type="number" min="0" max="1000"
+																   class="form-control"
+																   aria-label="Zeitschaltuhr Start in Sekunden"
+																   id="global-timer-start"
+																   name="global-timer-start">
+															<!-- Stop field -->
+															<label for="global-timer-stop" class="sr-only"> Stop in
+																Sekunden</label>
+															<span class="input-group-addon"><i
+																	class="glyphicon glyphicon-stop"></i></span>
+															<input type="number" min="0" max="1000"
+																   class="form-control"
+																   aria-label="Zeitschaltuhr Stop in Sekunden"
+																   id="global-timer-stop"
+																   name="global-timer-stop">
+															<!-- Set checkbox -->
+															<span class="input-group-addon">
+																<label
+																	for="global-timer-set">Zeitschaltuhr aktivieren</label>
+																<input type="checkbox"
+																	   id="global-timer-set"
+																	   name="global-timer-set"
+																	   value="global-timer-active"
+																	   data-targetstart="#global-timer-start"
+																	   data-targetstop="#global-timer-stop">
+															</span>
+															<!-- Reset button -->
+															<label for="global-timer-refresh" class="sr-only"> Neu
+																laden</label>
+															<span class="input-group-btn"><button type="button"
+																								  class="btn btn-default"><i
+																		class="glyphicon glyphicon-refresh"
+																		onClick="location.reload()"></i></button></span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+							</div>
 							<div class="col-xs-6">
 								<!-- Livingroom -->
-								<div id="livingroom-content">
+								<div id="livingroom-content" class="room">
 									<h3>Wohnzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
@@ -101,7 +143,7 @@
 							</div>
 							<div class="col-xs-6">
 								<!-- Bedroom -->
-								<div id="bedroom-content">
+								<div id="bedroom-content" class="room">
 									<h3>Schlafzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
@@ -135,23 +177,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- Hallway -->
-								<div class="hallway-content">
-									<div class="station">
-										<h3>Kontrollstation</h3>
-										<div class="hallway-station-content ajax-content"></div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="col-xs-6">
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- Kitchen -->
-								<div id="kitchen-content">
+								<div id="kitchen-content" class="room">
 									<h3>Küche</h3>
 									<div class="row">
 										<div class="col-xs-12">
@@ -199,6 +230,7 @@
 				</div>
 			</div>
 		</div>
+		<hr>
 	</div>
 </div>
 <div id="controls-wrapper">
@@ -296,12 +328,36 @@
 									</li>
 									<li class="list-group-item">
 										<div class="row">
-											<div class="col-xs-7">Kühlschrank</div>
+											<div class="col-xs-7">Gefriertruhe</div>
 											<div class="col-xs-5">
 												<div
 													class="toggle toggle-light toggle-local-control kitchen-freezer-control"
 													id="kitchen-freezer-control-signal-one"
 													data-target="#kitchen-freezer-signal-one"
+													data-group="station-group-kitchen"></div>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-xs-7">Waschmaschine</div>
+											<div class="col-xs-5">
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-washingmachine-control"
+													id="kitchen-washingmachine-control-signal-one"
+													data-target="#kitchen-washingmachine-signal-one"
+													data-group="station-group-kitchen"></div>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-xs-7">Geschirrspüler</div>
+											<div class="col-xs-5">
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-dishwasher-control"
+													id="kitchen-dishwasher-control-signal-one"
+													data-target="#kitchen-dishwasher-signal-one"
 													data-group="station-group-kitchen"></div>
 											</div>
 										</div>
@@ -347,69 +403,10 @@
 				</div>
 			</div>
 			<div class="col-xs-4">
-				<h3>Globale Kontrollelemente</h3>
-				<ul class="list-group">
-					<li class="list-group-item">
-						<div class="row">
-							<div class="col-xs-12">
-								<button type="button" class="btn btn-danger btn-block transition"
-										id="global-control-reset"
-										disabled>
-									Not-Aus
-								</button>
-							</div>
-						</div>
-					</li>
-					<li class="list-group-item">
-						<div class="row">
-							<div class="col-xs-12">
-								<div id="global-set">
-									<h4>Prüfung auf Aktivität</h4>
-									<span class="btn btn-default transition">Status: <i
-											class="glyphicon glyphicon-alert"
-											id="global-set-icon"></i></span>
-								</div>
-							</div>
-						</div>
-						<!--
-						div class="row">
-							<div class="col-xs-8">
-								<div class="row">
-									<div class="col-xs-6">
-										Aktivieren
-									</div>
-									<div class="col-xs-6">
-										<div class="toggle toggle-light toggle-global-control"
-											 id="global-control-set"></div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-4">
-								<div class="row">
-									<div class="col-xs-6">
-										Status
-									</div>
-									<div class="col-xs-6">
-										<div id="global-set">
-											<i class="glyphicon glyphicon-alert"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						-->
-					</li>
-				</ul>
+
 			</div>
 			<div class="col-xs-4">
-				<h3>Meldungen von Not-Tastern</h3>
-				<div id="global-emergency-messages">
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success">
-							<i class="glyphicon glyphicon-ok"></i> Keine Meldungen vorhanden!
-						</li>
-					</ul>
-				</div>
+
 			</div>
 		</div>
 	</div>

@@ -412,33 +412,5 @@
 			}
 		};
 
-		/**
-		 * +++++++++++++++++++++++++++++++++++++++++++
-		 * ++ Control section global set
-		 * ** (old, used with own toggle)
-		 * ** @deprecated
-		 * +++++++++++++++++++++++++++++++++++++++++++
-		 */
-		FOS.initControlSectionGlobalSet = function () {
-			$("#global-control-set").on("toggle", function (e, active) {
-				if (active) {
-					// Check for existing fields
-					if (statusControlSectionLocal === true) {
-						$globalSetIcon.addClass(globalSetIconClass);
-					}
-					// Check for fields after activation
-					$toggleLocalControl.on("toggle", function () {
-						if (statusControlSectionLocal === true) {
-							$globalSetIcon.addClass(globalSetIconClass);
-						} else {
-							$globalSetIcon.removeClass(globalSetIconClass);
-						}
-					});
-				} else {
-					$globalSetIcon.removeClass(globalSetIconClass);
-				}
-			});
-		};
-
 	}(window.FOS = window.FOS || {}, jQuery)
 );
