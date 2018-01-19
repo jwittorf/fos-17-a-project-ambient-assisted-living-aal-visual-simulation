@@ -63,23 +63,91 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-9">
+			<div class="col-xs-12">
 				<h2>Wohnbereich und Schaltplan</h2>
 				<div class="row">
-					<div class="col-xs-5">
-						<!-- Living room -->
-						<div class="livingroom-content ajax-content">
+					<div class="col-xs-6">
+						<div class="row">
+							<div class="col-xs-6">
+								<!-- Livingroom -->
+								<div id="livingroom-content">
+									<h3>Wohnzimmer</h3>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="livingroom-emergency-content">
+												<div class="row">
+													<div class="col-xs-7">
+														<div id="livingroom-emergency-name">
+															Not-Taster Wohnzimmer
+														</div>
+													</div>
+													<div class="col-xs-5">
+														<div class="toggle toggle-light toggle-local-emergency"
+															 id="livingroom-emergency"
+															 data-name="#livingroom-emergency-name"
+															 data-target="#livingroom-content"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<h4>Fernseher</h4>
+											<div class="livingroom-tv-content ajax-content"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<!-- Bedroom -->
+								<div id="bedroom-content">
+									<h3>Schlafzimmer</h3>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="bedroom-emergency-content">
+												<div class="row">
+													<div class="col-xs-7">
+														<div id="bedroom-emergency-name">
+															Not-Taster Schlafzimmer
+														</div>
+													</div>
+													<div class="col-xs-5">
+														<div class="toggle toggle-light toggle-local-emergency"
+															 id="bedroom-emergency"
+															 data-name="#bedroom-emergency-name"
+															 data-target="#bedroom-content"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<h4>Nachtisch 1</h4>
+											<div class="bedroom-nightstand1-content ajax-content"></div>
+										</div>
+										<div class="col-xs-6">
+											<h4>Nachtisch 2</h4>
+											<div class="bedroom-nightstand2-content ajax-content"></div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="col-xs-2">
-						<!-- Hallway -->
-						<div class="hallway-content">
-							<div class="station">
-								<div class="hallway-station-content ajax-content"></div>
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- Hallway -->
+								<div class="hallway-content">
+									<div class="station">
+										<h3>Kontrollstation</h3>
+										<div class="hallway-station-content ajax-content"></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-5">
+					<div class="col-xs-6">
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- Kitchen -->
@@ -130,8 +198,14 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-3">
-				<h2>Kontrollbereich</h2>
+		</div>
+	</div>
+</div>
+<div id="controls-wrapper">
+	<div class="container">
+		<h2>Kontrollbereich</h2>
+		<div class="row">
+			<div class="col-xs-4">
 				<h3>Lokale Kontrollelemente</h3>
 				<div class="panel-group" id="control-panel" role="tablist" aria-multiselectable="true">
 					<div class="panel panel-default">
@@ -271,6 +345,8 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="col-xs-4">
 				<h3>Globale Kontrollelemente</h3>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -324,6 +400,8 @@
 						-->
 					</li>
 				</ul>
+			</div>
+			<div class="col-xs-4">
 				<h3>Meldungen von Not-Tastern</h3>
 				<div id="global-emergency-messages">
 					<ul class="list-group">

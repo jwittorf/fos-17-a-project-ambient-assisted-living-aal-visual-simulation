@@ -4,12 +4,7 @@
 }
 
 // Stove
-.kitchen-stove-content {
-	transform: rotate(90deg);
-}
-
 #kitchen-stove {
-	width: $device-width;
 	padding: $device-padding;
 	border: $device-border;
 	text-align: center;
@@ -32,7 +27,6 @@
 
 // Oven
 #kitchen-stove-oven-one {
-	width: $device-width;
 	padding: $device-padding;
 	border: $device-border;
 	border-top: 0;

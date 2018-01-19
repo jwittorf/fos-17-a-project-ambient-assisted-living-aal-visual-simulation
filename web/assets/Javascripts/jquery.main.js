@@ -18,6 +18,7 @@
 		 * +++++++++++++++++++++++++++++++++++++++++++
 		 */
 		FOS.initAjax = function () {
+			// Kitchen
 			$(".kitchen-stove-content").load("ajax/kitchen/stove.html", function (response, status, xhr) {
 				if (status !== "success") {
 					var msg = "Sorry but something went wrong! ";
@@ -48,6 +49,30 @@
 					console.log(msg + xhr.status + " " + xhr.statusText);
 				}
 			});
+
+			// Livingroom
+			$(".livingroom-tv-content").load("ajax/livingroom/tv.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+
+			// Bedroom
+			$(".bedroom-nightstand1-content").load("ajax/bedroom/nightstand1.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+			$(".bedroom-nightstand2-content").load("ajax/bedroom/nightstand2.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+
+			// Hallway
 			$(".hallway-station-content").load("ajax/hallway/station.html", function (response, status, xhr) {
 				if (status !== "success") {
 					var msg = "Sorry but something went wrong! ";
