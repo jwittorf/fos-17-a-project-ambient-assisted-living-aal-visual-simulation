@@ -33,10 +33,10 @@
 //@import "components/XXX";
 @import "components/toggles";
 @import "components/emergency";
+@import "components/device";
 
 // layout related stuff (everything that has an #id)
 //@import "layout/XXX";
 @import "layout/global-set";
-@import "layout/kitchen/stove";
-@import "layout/kitchen/oven";
+@import "layout/kitchen";
 @import "layout/hallway/station";

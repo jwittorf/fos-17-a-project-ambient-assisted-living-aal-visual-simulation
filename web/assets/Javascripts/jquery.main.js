@@ -24,6 +24,30 @@
 					console.log(msg + xhr.status + " " + xhr.statusText);
 				}
 			});
+			$(".kitchen-fridge-content").load("ajax/kitchen/fridge.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+			$(".kitchen-freezer-content").load("ajax/kitchen/freezer.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+			$(".kitchen-washingmachine-content").load("ajax/kitchen/washingmachine.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
+			$(".kitchen-dishwasher-content").load("ajax/kitchen/dishwasher.html", function (response, status, xhr) {
+				if (status !== "success") {
+					var msg = "Sorry but something went wrong! ";
+					console.log(msg + xhr.status + " " + xhr.statusText);
+				}
+			});
 			$(".hallway-station-content").load("ajax/hallway/station.html", function (response, status, xhr) {
 				if (status !== "success") {
 					var msg = "Sorry but something went wrong! ";
@@ -59,7 +83,8 @@
 			$globalControlReset = $("#global-control-reset");
 			// Define local toggles excluded from reset
 			globalControlResetExclude = [
-				"#kitchen-stove-control-hotplate-two"
+				"#kitchen-fridge-control-signal-one",
+				"#kitchen-freezer-control-signal-one"
 			];
 			// Join elements to jQuery object/select
 			$globalControlResetExclude = $toggleLocalControl.not($(globalControlResetExclude.join(", ")));
@@ -67,8 +92,9 @@
 			// Default toggles
 			// Define toggles to be on by default
 			defaultTogglesOn = [
-				"#kitchen-stove-control-hotplate-two",
-				"#kitchen-stove-control-oven-one"];
+				"#kitchen-fridge-control-signal-one",
+				"#kitchen-freezer-control-signal-one"
+			];
 			// Join elements to jQuery object/select
 			$defaultTogglesOn = $(defaultTogglesOn.join(", "));
 

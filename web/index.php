@@ -84,8 +84,9 @@
 							<div class="col-xs-12">
 								<!-- Kitchen -->
 								<div id="kitchen-content">
+									<h3>Küche</h3>
 									<div class="row">
-										<div class="col-xs-6">
+										<div class="col-xs-12">
 											<div class="kitchen-emergency-content">
 												<div class="row">
 													<div class="col-xs-7">
@@ -101,8 +102,21 @@
 												</div>
 											</div>
 										</div>
+									</div>
+									<div class="row">
 										<div class="col-xs-6">
+											<h4>Waschmaschine</h4>
+											<div class="kitchen-washingmachine-content ajax-content"></div>
+											<h4>Geschirrspüler</h4>
+											<div class="kitchen-dishwasher-content ajax-content"></div>
+										</div>
+										<div class="col-xs-6">
+											<h4>Kühlschrank</h4>
+											<div class="kitchen-fridge-content ajax-content"></div>
+											<h4>Herd mit Ofen</h4>
 											<div class="kitchen-stove-content ajax-content"></div>
+											<h4>Gefriertruhe</h4>
+											<div class="kitchen-freezer-content ajax-content"></div>
 										</div>
 									</div>
 								</div>
@@ -190,6 +204,30 @@
 													class="toggle toggle-light toggle-local-control kitchen-stove-control"
 													id="kitchen-stove-control-hotplate-four"
 													data-target="#kitchen-stove-hotplate-four"
+													data-group="station-group-kitchen"></div>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-xs-7">Kühlschrank</div>
+											<div class="col-xs-5">
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-fridge-control"
+													id="kitchen-fridge-control-signal-one"
+													data-target="#kitchen-fridge-signal-one"
+													data-group="station-group-kitchen"></div>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-xs-7">Kühlschrank</div>
+											<div class="col-xs-5">
+												<div
+													class="toggle toggle-light toggle-local-control kitchen-freezer-control"
+													id="kitchen-freezer-control-signal-one"
+													data-target="#kitchen-freezer-signal-one"
 													data-group="station-group-kitchen"></div>
 											</div>
 										</div>

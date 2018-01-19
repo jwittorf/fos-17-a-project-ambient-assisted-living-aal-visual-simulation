@@ -1,0 +1,41 @@
+#kitchen-content {
+	border: $device-border;
+	padding: $device-padding;
+}
+
+// Stove
+.kitchen-stove-content {
+	transform: rotate(90deg);
+}
+
+#kitchen-stove {
+	width: $device-width;
+	padding: $device-padding;
+	border: $device-border;
+	text-align: center;
+	.kitchen-stove-hotplate {
+		border: $device-border;
+		content: "";
+		border-radius: 50%;
+		display: inline-block;
+		&.kitchen-stove-hotplate-small {
+			margin-top: calc(25px / 2);
+			width: 25px;
+			height: 25px;
+		}
+		&.kitchen-stove-hotplate-large {
+			width: 50px;
+			height: 50px;
+		}
+	}
+}
+
+// Oven
+#kitchen-stove-oven-one {
+	width: $device-width;
+	padding: $device-padding;
+	border: $device-border;
+	border-top: 0;
+	content: "";
+	height: 20px;
+}

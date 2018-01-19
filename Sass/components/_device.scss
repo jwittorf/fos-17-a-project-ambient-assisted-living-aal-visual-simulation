@@ -1,0 +1,14 @@
+// General regular device
+.device {
+	padding: $device-padding;
+	border: $device-border;
+	text-align: center;
+	.device-signal {
+		border: $device-border;
+		content: "";
+		border-radius: 50%;
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+	}
+}
