@@ -77,7 +77,6 @@ data-group="station-group-kitchen"></div>
 	* data-name: referring to id from name/heading (2.)
 	* data-target: referring to id from content (`[section]-content`) 
 
-
 #### Example:
 ```html
 <div class="kitchen-emergency-content">
@@ -95,3 +94,27 @@ data-group="station-group-kitchen"></div>
     </div>
 </div>
 ```
+
+---------------------------------------
+
+
+## Global timer
+
+Simulates a morning (wake-up) and a night (sleep).
+During night until morning all possible local control toggles (devices, aka globalTimerToggles) will be set to disabled an inactive.
+This refers to all local control toggles, that are NOT excluded from the global reset. What is excluded from global reset will not be disabled and set inactive.
+
+#### How it works
+* On activation all possible local control toggles (devices, aka globalTimerToggles) will be set inactive and disabled (simulate the night).
+* After the start time, all globalTimerToggles will be enabled again, so you can set them active (simulate the day).
+* The stop time determines after what time in seconds AFTER THE START TIME the globalTimerToggles will again be set inactive and disabled (simulate the night).
+* After going back to night mode, the checkbox for enabling the timer will be enabled again.
+	* Uncheck it to enable the globalTimerToggles again, so you can set them active or inactive for further simulation.
+
+#### Use it like this
+* Set a start time in seconds (time from initial night to morning, since we start at night)
+* Set a stop time in seconds (time from set morning to night, aka duration of the day)
+	* Will be added on top of the start time,
+	so if you have 5 seconds start and 10 seconds stop,
+	the action will happen 10 seconds after enabling the globalTimerToggles
+* Reload the browser by yourself or use the refresh button on the right

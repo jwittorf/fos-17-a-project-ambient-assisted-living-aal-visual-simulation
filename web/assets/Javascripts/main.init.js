@@ -8,6 +8,7 @@
 		FOS.initControlSectionLocal();
 		FOS.initControlSectionGlobalReset();
 		FOS.initLocalEmergency();
+		FOS.initGlobalTimer();
 		// FOS.initControlSectionGlobalSet();
 	});
 

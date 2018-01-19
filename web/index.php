@@ -13,6 +13,54 @@
 </head>
 <body>
 <div id="wrapper">
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+
+				</div>
+				<div class="col-xs-8">
+					<div id="global-timer">
+						<div class="form-horizontal">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-time"></i>
+								</span>
+								<!-- Start field -->
+								<label for="global-timer-start" class="sr-only"> Start in Sekunden</label>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-play"></i></span>
+								<input type="number" min="0" max="1000" class="form-control"
+									   aria-label="Zeitschaltuhr Start in Sekunden" id="global-timer-start"
+									   name="global-timer-start">
+								<!-- Stop field -->
+								<label for="global-timer-stop" class="sr-only"> Stop in Sekunden</label>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-stop"></i></span>
+								<input type="number" min="0" max="1000" class="form-control"
+									   aria-label="Zeitschaltuhr Stop in Sekunden" id="global-timer-stop"
+									   name="global-timer-stop">
+								<!-- Set checkbox -->
+								<span class="input-group-addon">
+									<label
+										for="global-timer-set">Zeitschaltuhr aktivieren</label>
+									<input type="checkbox"
+										   id="global-timer-set"
+										   name="global-timer-set"
+										   value="global-timer-active"
+										   data-targetstart="#global-timer-start"
+										   data-targetstop="#global-timer-stop">
+								</span>
+								<!-- Reset button -->
+								<label for="global-timer-refresh" class="sr-only"> Neu laden</label>
+								<span class="input-group-btn"><button type="button" class="btn btn-default"><i
+											class="glyphicon glyphicon-refresh"
+											onClick="location.reload()"></i></button></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-9">

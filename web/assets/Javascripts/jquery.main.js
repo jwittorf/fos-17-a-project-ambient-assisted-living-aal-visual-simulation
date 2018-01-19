@@ -40,6 +40,8 @@
 		 * +++++++++++++++++++++++++++++++++++++++++++
 		 */
 		FOS.initToggleVars = function () {
+
+			// Local toggle
 			statusControlSectionLocal = false;
 			$toggleLocalControl = $(".toggle-local-control");
 			$toggleLocalEmergency = $(".toggle-local-emergency");
@@ -75,6 +77,10 @@
 			globalEmergencyMessagesLog = [];
 			emergencyMessages = [];
 			$emergencyMessageModal = $("#emergency-message-modal");
+
+			// Global timer
+			$globalTimerSet = $("#global-timer-set");
+			globalTimerToggles = [];
 		};
 
 		/**
@@ -233,6 +239,99 @@
 				}
 				// Output updated globalEmergencyMessagesLog
 				$globalEmergencyMessages.children(".list-group").html(globalEmergencyMessagesLog);
+			});
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Init global timer
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.initGlobalTimer = function () {
+			$globalTimerSet.change(function () {
+				// Data of entire global timer
+				var data = $(this).data();
+				// Target of start input (with #)
+				var globalTimerTargetStart = data.targetstart;
+				// Target of stop input (with #)
+				var globalTimerTargetStop = data.targetstop;
+				// Start input as jQuery object
+				var $globalTimerStart = $(globalTimerTargetStart);
+				// Stop input as jQuery object
+				var $globalTimerStop = $(globalTimerTargetStop);
+				// Start value from input in ms (* 1000)
+				var globalTimerStart = $globalTimerStart.val() * 1000;
+				// Stop value from input in ms (* 1000)
+				var globalTimerStop = $globalTimerStop.val() * 1000;
+				var globalTimerStopConcated = globalTimerStart + globalTimerStop;
+				// Go through all local toggle controls
+				$toggleLocalControl.each(function () {
+					// Id of current toggle local control
+					var toggleLocalControl = "#" + $(this).attr("id");
+					// Current toggle local control as jQuery object
+					$toggleLocalControl = $(toggleLocalControl);
+					// Check if the current toggle local control isn't excluded from the global reset
+					// We want to enable and disable everything, that doesn't need constant electricity
+					if ($.inArray(toggleLocalControl, globalControlResetExclude) === -1) {
+						// Add current toggle local control to array of globalTimerToggles as jQuery object
+						globalTimerToggles.push($toggleLocalControl);
+					}
+				});
+				if (this.checked) {
+					// Disable the checkbox to prevent unchecking it too early
+					$(this).addClass("disabled").prop("disabled", true);
+					// Run helper function to set all global timer toggles to inactive and disabled
+					FOS.globalTimerResetInactiveDisable();
+					// Execute after waiting for start time from initial time
+					setTimeout(function () {
+						FOS.globalTimerEnable();
+					}, globalTimerStart);
+					// Execute after waiting for stop time from initial time,
+					// ONTO THE START TIME!
+					setTimeout(function () {
+						// Enable the checkbox again to enable unchecking it
+						$globalTimerSet.removeClass("disabled").prop("disabled", false);
+						// Run helper function to set all global timer toggles to inactive and disabled
+						FOS.globalTimerResetInactiveDisable();
+					}, globalTimerStopConcated);
+				} else {
+					// Enable global timer toggles after disabling the timer
+					FOS.globalTimerEnable();
+				}
+			})
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Helper function to set all global timer toggles
+		 * ** to inactive and disabled
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.globalTimerResetInactiveDisable = function () {
+			// Go through all globalTimerToggles (all available local control toggles)
+			$.each(globalTimerToggles, function () {
+				var $this = $(this);
+				// Get data from toggles
+				var data = $this.data("toggles");
+				if (data.active === true) {
+					// Set local control toggle inactive
+					data.toggle(false);
+				}
+				// Disable globalTimerToggle
+				$this.toggleClass("disabled", true);
+			});
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Helper function to enable all global timer toggles
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.globalTimerEnable = function () {
+			// Go through globalTimerToggles (all available local control toggles)
+			$.each(globalTimerToggles, function () {
+				// Enable globalTimerToggles again
+				$(this).toggleClass("disabled", false);
 			});
 		};
 
