@@ -238,175 +238,163 @@
 		<h2>Kontrollbereich</h2>
 		<div class="row">
 			<div class="col-xs-4">
-				<h3>Lokale Kontrollelemente</h3>
-				<div class="panel-group" id="control-panel" role="tablist" aria-multiselectable="true">
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="control-panel-heading-one">
-							<h4 class="panel-title">
-								<a href="#control-panel-body-one" role="button" data-toggle="collapse"
-								   data-parent="#control-panel" aria-expanded="true"
-								   aria-controls="control-panel-body-one">
-									Küche
-								</a>
-							</h4>
-						</div>
-						<div class="panel-collapse collapse in" role="tabpanel" id="control-panel-body-one"
-							 aria-labelledby="control-panel-heading-one">
-							<div class="panel-body">
-								<ul class="list-group">
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Backofen</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-stove-control"
-													id="kitchen-stove-control-oven-one"
-													data-target="#kitchen-stove-oven-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Herdplatte 1</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-stove-control"
-													id="kitchen-stove-control-hotplate-one"
-													data-target="#kitchen-stove-hotplate-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Herdplatte 2</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-stove-control"
-													id="kitchen-stove-control-hotplate-two"
-													data-target="#kitchen-stove-hotplate-two"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Herdplatte 3</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-stove-control"
-													id="kitchen-stove-control-hotplate-three"
-													data-target="#kitchen-stove-hotplate-three"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Herdplatte 4</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-stove-control"
-													id="kitchen-stove-control-hotplate-four"
-													data-target="#kitchen-stove-hotplate-four"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Kühlschrank</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-fridge-control"
-													id="kitchen-fridge-control-signal-one"
-													data-target="#kitchen-fridge-signal-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Gefriertruhe</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-freezer-control"
-													id="kitchen-freezer-control-signal-one"
-													data-target="#kitchen-freezer-signal-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Waschmaschine</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-washingmachine-control"
-													id="kitchen-washingmachine-control-signal-one"
-													data-target="#kitchen-washingmachine-signal-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-xs-7">Geschirrspüler</div>
-											<div class="col-xs-5">
-												<div
-													class="toggle toggle-light toggle-local-control kitchen-dishwasher-control"
-													id="kitchen-dishwasher-control-signal-one"
-													data-target="#kitchen-dishwasher-signal-one"
-													data-group="station-group-kitchen"></div>
-											</div>
-										</div>
-									</li>
-								</ul>
+				<h4>Küche</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Backofen</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-stove-control"
+									id="kitchen-stove-control-oven-one"
+									data-target="#kitchen-stove-oven-one"
+									data-group="station-group-kitchen"></div>
 							</div>
 						</div>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="control-panel-heading-two">
-							<h4 class="panel-title">
-								<a href="#control-panel-body-two" role="button" data-toggle="collapse"
-								   data-parent="#control-panel" aria-expanded="false"
-								   aria-controls="control-panel-body-two">
-									Schlafzimmer
-								</a>
-							</h4>
-						</div>
-						<div class="panel-collapse collapse" role="tabpanel" id="control-panel-body-two"
-							 aria-labelledby="control-panel-heading-two">
-							<div class="panel-body">
-								<p>Lorem ipsum</p>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Herdplatte 1</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-stove-control"
+									id="kitchen-stove-control-hotplate-one"
+									data-target="#kitchen-stove-hotplate-one"
+									data-group="station-group-kitchen"></div>
 							</div>
 						</div>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading" role="tab" id="control-panel-heading-three">
-							<h4 class="panel-title">
-								<a href="#control-panel-body-three" role="button" data-toggle="collapse"
-								   data-parent="#control-panel" aria-expanded="false"
-								   aria-controls="control-panel-body-three">
-									Wohnzimmer
-								</a>
-							</h4>
-						</div>
-						<div class="panel-collapse collapse" role="tabpanel" id="control-panel-body-three"
-							 aria-labelledby="control-panel-heading-three">
-							<div class="panel-body">
-								<p>Lorem ipsum</p>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Herdplatte 2</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-stove-control"
+									id="kitchen-stove-control-hotplate-two"
+									data-target="#kitchen-stove-hotplate-two"
+									data-group="station-group-kitchen"></div>
 							</div>
 						</div>
-					</div>
-				</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Herdplatte 3</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-stove-control"
+									id="kitchen-stove-control-hotplate-three"
+									data-target="#kitchen-stove-hotplate-three"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Herdplatte 4</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-stove-control"
+									id="kitchen-stove-control-hotplate-four"
+									data-target="#kitchen-stove-hotplate-four"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Kühlschrank</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-fridge-control"
+									id="kitchen-fridge-control-signal-one"
+									data-target="#kitchen-fridge-signal-one"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Gefriertruhe</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-freezer-control"
+									id="kitchen-freezer-control-signal-one"
+									data-target="#kitchen-freezer-signal-one"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Waschmaschine</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-washingmachine-control"
+									id="kitchen-washingmachine-control-signal-one"
+									data-target="#kitchen-washingmachine-signal-one"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Geschirrspüler</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-dishwasher-control"
+									id="kitchen-dishwasher-control-signal-one"
+									data-target="#kitchen-dishwasher-signal-one"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="col-xs-4">
-
+				<h4>Schlafzimmer</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Nachttisch 1</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control bedroom-nightstand1-control"
+									id="bedroom-nightstand1-control-signal-one"
+									data-target="#bedroom-nightstand1-signal-one"
+									data-group="station-group-bedroom"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Nachttisch 2</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control bedroom-nightstand2-control"
+									id="bedroom-nightstand2-control-signal-one"
+									data-target="#bedroom-nightstand2-signal-one"
+									data-group="station-group-bedroom"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="col-xs-4">
-
+				<h4>Wohnzimmer</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Fernseher</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control livingroom-tv-control"
+									id="livingroom-tv-control-signal-one"
+									data-target="#livingroom-tv-signal-one"
+									data-group="station-group-livingroom"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
