@@ -19,92 +19,25 @@
 		 */
 		FOS.initAjax = function () {
 			// Kitchen
-			$(".kitchen-stove-content").load("ajax/kitchen/stove.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".kitchen-fridge-content").load("ajax/kitchen/fridge.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".kitchen-freezer-content").load("ajax/kitchen/freezer.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".kitchen-washingmachine-content").load("ajax/kitchen/washingmachine.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".kitchen-dishwasher-content").load("ajax/kitchen/dishwasher.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".kitchen-window-content").load("ajax/kitchen/window.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
+			FOS.initAjaxCall(".kitchen-stove-content", "ajax/kitchen/stove.html");
+			FOS.initAjaxCall(".kitchen-fridge-content", "ajax/kitchen/fridge.html");
+			FOS.initAjaxCall(".kitchen-freezer-content", "ajax/kitchen/freezer.html");
+			FOS.initAjaxCall(".kitchen-washingmachine-content", "ajax/kitchen/washingmachine.html");
+			FOS.initAjaxCall(".kitchen-dishwasher-content", "ajax/kitchen/dishwasher.html");
+			FOS.initAjaxCall(".kitchen-window-content", "ajax/kitchen/window.html");
 
 			// Livingroom
-			$(".livingroom-tv-content").load("ajax/livingroom/tv.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".livingroom-window-content").load("ajax/livingroom/window.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
+			FOS.initAjaxCall(".livingroom-tv-content", "ajax/livingroom/tv.html");
+			FOS.initAjaxCall(".livingroom-window-content", "ajax/livingroom/window.html");
 
 			// Bedroom
-			$(".bedroom-nightstand1-content").load("ajax/bedroom/nightstand1.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".bedroom-nightstand2-content").load("ajax/bedroom/nightstand2.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".bedroom-window-content").load("ajax/bedroom/window.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
+			FOS.initAjaxCall(".bedroom-nightstand1-content", "ajax/bedroom/nightstand1.html");
+			FOS.initAjaxCall(".bedroom-nightstand2-content", "ajax/bedroom/nightstand2.html");
+			FOS.initAjaxCall(".bedroom-window-content", "ajax/bedroom/window.html");
 
 			// Hallway
-			$(".hallway-frontdoor-content").load("ajax/hallway/frontdoor.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-			});
-			$(".hallway-station-content").load("ajax/hallway/station.html", function (response, status, xhr) {
-				if (status !== "success") {
-					var msg = "Sorry but something went wrong! ";
-					console.log(msg + xhr.status + " " + xhr.statusText);
-				}
-				// Need to call default toggles after the ajax call, otherwise won't init correctly
-				FOS.initDefaultToggles();
-			});
+			FOS.initAjaxCall(".hallway-frontdoor-content", "ajax/hallway/frontdoor.html");
+			FOS.initAjaxCall(".hallway-station-content", "ajax/hallway/station.html", true);
 		};
 
 		/**
@@ -420,6 +353,33 @@
 				// Activate all default toggles
 				$(this).toggles(true);
 			});
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Helper function for ajax calls to sections
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.initAjaxCall = function (element = false, file = false, defaultToggles = false) {
+			if (element !== false) {
+				if (file !== false) {
+					$(element).load(file, function (response, status, xhr) {
+						if (status !== "success") {
+							var msg = "Sorry but something went wrong! ";
+							console.log(msg + xhr.status + " " + xhr.statusText);
+						}
+						if (defaultToggles === true) {
+							// Need to call default toggles after the ajax call, otherwise won't init correctly
+							FOS.initDefaultToggles();
+						}
+					});
+				} else {
+					console.log("No \"file\" parameter set!");
+				}
+			} else {
+				console.log("No \"element\" parameter set!");
+
+			}
 		};
 
 		/**
