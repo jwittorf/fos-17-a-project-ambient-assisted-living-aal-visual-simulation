@@ -1,3 +1,7 @@
+.emergency-content {
+	margin-bottom: $device-margin;
+}
+
 .emergency-blink {
 	animation: emergency-blink 1.5s infinite;
 	transition: none;

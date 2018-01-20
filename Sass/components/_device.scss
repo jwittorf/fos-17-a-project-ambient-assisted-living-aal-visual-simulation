@@ -2,6 +2,7 @@
 .device {
 	padding: $device-padding;
 	border: $device-border;
+	margin-bottom: $device-margin;
 	text-align: center;
 	.device-signal {
 		border: $device-border;

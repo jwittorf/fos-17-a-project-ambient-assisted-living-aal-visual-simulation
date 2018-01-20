@@ -15,7 +15,7 @@
 <div id="wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-4">
 				<h3>Meldungen von Not-Tastern</h3>
 				<div id="global-emergency-messages">
 					<ul class="list-group">
@@ -25,66 +25,52 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-8">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-12">
+						<h4>Kontrollstation</h4>
 						<div class="row">
-							<div class="col-xs-12">
-								<!-- Hallway -->
-								<div class="hallway-content">
-									<div class="station">
-										<h3>Kontrollstation</h3>
-										<div class="hallway-station-content ajax-content"></div>
-										<hr>
-										<div class="row">
-											<div class="col-xs-6">
-												<button type="button" class="btn btn-danger btn-block transition"
-														id="global-control-reset"
-														disabled>
-													Not-Aus
-												</button>
-											</div>
-											<div class="col-xs-6">
-												<div id="global-set">
-														<span class="btn btn-default transition">Status: <i
-																class="glyphicon glyphicon-alert"
-																id="global-set-icon"></i></span>
-												</div>
-											</div>
-										</div>
-										<hr>
-										<div class="row">
-											<div class="col-xs-12">
-												<div id="global-timer">
-													<div class="form-horizontal">
-														<div class="input-group">
+							<div class="col-xs-9">
+								<div class="hallway-station-content ajax-content"></div>
+							</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-danger btn-block transition"
+										id="global-control-reset"
+										disabled>
+									Not-Aus
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-9">
+								<div id="global-timer">
+									<div class="form-horizontal">
+										<div class="input-group">
 															<span class="input-group-addon">
 																<i class="glyphicon glyphicon-time"></i>
 															</span>
-															<!-- Start field -->
-															<label for="global-timer-start" class="sr-only"> Start
-																in Sekunden</label>
-															<span class="input-group-addon"><i
-																	class="glyphicon glyphicon-play"></i></span>
-															<input type="number" min="0" max="1000"
-																   class="form-control"
-																   aria-label="Zeitschaltuhr Start in Sekunden"
-																   id="global-timer-start"
-																   name="global-timer-start">
-															<!-- Stop field -->
-															<label for="global-timer-stop" class="sr-only"> Stop in
-																Sekunden</label>
-															<span class="input-group-addon"><i
-																	class="glyphicon glyphicon-stop"></i></span>
-															<input type="number" min="0" max="1000"
-																   class="form-control"
-																   aria-label="Zeitschaltuhr Stop in Sekunden"
-																   id="global-timer-stop"
-																   name="global-timer-stop">
-															<!-- Set checkbox -->
-															<span class="input-group-addon">
+											<!-- Start field -->
+											<label for="global-timer-start" class="sr-only"> Start
+												in Sekunden</label>
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-play"></i></span>
+											<input type="number" min="0" max="1000"
+												   class="form-control"
+												   aria-label="Zeitschaltuhr Start in Sekunden"
+												   id="global-timer-start"
+												   name="global-timer-start">
+											<!-- Stop field -->
+											<label for="global-timer-stop" class="sr-only"> Stop in
+												Sekunden</label>
+											<span class="input-group-addon"><i
+													class="glyphicon glyphicon-stop"></i></span>
+											<input type="number" min="0" max="1000"
+												   class="form-control"
+												   aria-label="Zeitschaltuhr Stop in Sekunden"
+												   id="global-timer-stop"
+												   name="global-timer-stop">
+											<!-- Set checkbox -->
+											<span class="input-group-addon">
 																<label
 																	for="global-timer-set">Zeitschaltuhr aktivieren</label>
 																<input type="checkbox"
@@ -94,14 +80,60 @@
 																	   data-targetstart="#global-timer-start"
 																	   data-targetstop="#global-timer-stop">
 															</span>
-															<!-- Reset button -->
-															<label for="global-timer-refresh" class="sr-only"> Neu
-																laden</label>
-															<span class="input-group-btn"><button type="button"
-																								  class="btn btn-default"><i
-																		class="glyphicon glyphicon-refresh"
-																		onClick="location.reload()"></i></button></span>
+											<!-- Reset button -->
+											<label for="global-timer-refresh" class="sr-only"> Neu
+												laden</label>
+											<span class="input-group-btn"><button type="button"
+																				  class="btn btn-default"><i
+														class="glyphicon glyphicon-refresh"
+														onClick="location.reload()"></i></button></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div id="global-set">
+															<span
+																class="btn btn-default btn-block transition">Status: <i
+																	class="glyphicon glyphicon-alert"
+																	id="global-set-icon"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- Hallway -->
+								<div id="hallway-content" class="room">
+									<h3>Flur</h3>
+									<div class="row">
+										<div class="col-xs-12">
+											<h4>Haustür</h4>
+											<div class="hallway-frontdoor-content ajax-content"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="hallway-emergency-content emergency-content">
+												<div class="row">
+													<div class="col-xs-7">
+														<div id="hallway-emergency-name">
+															Not-Taster Flur
 														</div>
+													</div>
+													<div class="col-xs-5">
+														<div class="toggle toggle-light toggle-local-emergency"
+															 id="hallway-emergency"
+															 data-name="#hallway-emergency-name"
+															 data-target="#hallway-content"></div>
 													</div>
 												</div>
 											</div>
@@ -110,13 +142,21 @@
 								</div>
 								<hr>
 							</div>
+						</div>
+						<div class="row">
 							<div class="col-xs-6">
 								<!-- Livingroom -->
 								<div id="livingroom-content" class="room">
 									<h3>Wohnzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="livingroom-emergency-content">
+											<h4>Fenster</h4>
+											<div class="livingroom-window-content ajax-content"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="livingroom-emergency-content emergency-content">
 												<div class="row">
 													<div class="col-xs-7">
 														<div id="livingroom-emergency-name">
@@ -147,7 +187,13 @@
 									<h3>Schlafzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="bedroom-emergency-content">
+											<h4>Fenster</h4>
+											<div class="bedroom-window-content ajax-content"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="bedroom-emergency-content emergency-content">
 												<div class="row">
 													<div class="col-xs-7">
 														<div id="bedroom-emergency-name">
@@ -186,7 +232,13 @@
 									<h3>Küche</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<div class="kitchen-emergency-content">
+											<h4>Fenster</h4>
+											<div class="kitchen-window-content ajax-content"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="kitchen-emergency-content emergency-content">
 												<div class="row">
 													<div class="col-xs-7">
 														<div id="kitchen-emergency-name">
@@ -220,11 +272,6 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12">
-								<!-- Bedroom -->
-								<div class="bedroom-content ajax-content">
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -237,7 +284,7 @@
 	<div class="container">
 		<h2>Kontrollbereich</h2>
 		<div class="row">
-			<div class="col-xs-4">
+			<div class="col-xs-3">
 				<h4>Küche</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -348,9 +395,21 @@
 							</div>
 						</div>
 					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Fenster</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control kitchen-window-control"
+									id="kitchen-window-control-signal-one"
+									data-target="#kitchen-window-signal-one"
+									data-group="station-group-kitchen"></div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
-			<div class="col-xs-4">
+			<div class="col-xs-3">
 				<h4>Schlafzimmer</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -377,9 +436,21 @@
 							</div>
 						</div>
 					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Fenster</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control bedroom-window-control"
+									id="bedroom-window-control-signal-one"
+									data-target="#bedroom-window-signal-one"
+									data-group="station-group-bedroom"></div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
-			<div class="col-xs-4">
+			<div class="col-xs-3">
 				<h4>Wohnzimmer</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -391,6 +462,35 @@
 									id="livingroom-tv-control-signal-one"
 									data-target="#livingroom-tv-signal-one"
 									data-group="station-group-livingroom"></div>
+							</div>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Fenster</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control livingroom-window-control"
+									id="livingroom-window-control-signal-one"
+									data-target="#livingroom-window-signal-one"
+									data-group="station-group-livingroom"></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="col-xs-3">
+				<h4>Flur</h4>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">Haustür</div>
+							<div class="col-xs-5">
+								<div
+									class="toggle toggle-light toggle-local-control hallway-frontdoor-control"
+									id="hallway-frontdoor-control-signal-one"
+									data-target="#hallway-frontdoor-signal-one"
+									data-group="station-group-hallway"></div>
 							</div>
 						</div>
 					</li>
