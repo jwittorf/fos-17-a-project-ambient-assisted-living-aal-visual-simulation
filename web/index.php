@@ -400,7 +400,7 @@
 							<div class="col-xs-7">Fenster</div>
 							<div class="col-xs-5">
 								<div
-									class="toggle toggle-light toggle-local-control kitchen-window-control"
+									class="toggle toggle-light toggle-local-control kitchen-window-control window-control"
 									id="kitchen-window-control-signal-one"
 									data-target="#kitchen-window-signal-one"
 									data-group="station-group-kitchen"></div>
@@ -441,7 +441,7 @@
 							<div class="col-xs-7">Fenster</div>
 							<div class="col-xs-5">
 								<div
-									class="toggle toggle-light toggle-local-control bedroom-window-control"
+									class="toggle toggle-light toggle-local-control bedroom-window-control window-control"
 									id="bedroom-window-control-signal-one"
 									data-target="#bedroom-window-signal-one"
 									data-group="station-group-bedroom"></div>
@@ -470,7 +470,7 @@
 							<div class="col-xs-7">Fenster</div>
 							<div class="col-xs-5">
 								<div
-									class="toggle toggle-light toggle-local-control livingroom-window-control"
+									class="toggle toggle-light toggle-local-control livingroom-window-control window-control"
 									id="livingroom-window-control-signal-one"
 									data-target="#livingroom-window-signal-one"
 									data-group="station-group-livingroom"></div>

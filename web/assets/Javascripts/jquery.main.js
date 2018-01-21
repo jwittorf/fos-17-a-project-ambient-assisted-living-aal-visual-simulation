@@ -49,12 +49,14 @@
 
 			// Local toggle
 			statusControlSectionLocal = false;
+			windows = [];
 			$toggleLocalControl = $(".toggle-local-control");
 			$toggleLocalEmergency = $(".toggle-local-emergency");
 			toggleLocalClass = "alert-danger";
 
 			// Control station
 			$station = $(".station");
+			windowControlClass = "window-control";
 			toggleGroups = [];
 
 			// Global set (status)
@@ -114,6 +116,7 @@
 		FOS.initControlSectionLocal = function () {
 			// Check every local toggle on toggle event
 			$toggleLocalControl.on("toggle", function (e, active) {
+				var $stationGroupWindows = $("#station-group-windows");
 				// Specifiy target for single toggle
 				var target = $(this).data("target");
 				// Specifiy group for single toggle
@@ -131,9 +134,19 @@
 					// Will result in having an entry per toggle, which will can be removed afterwards one by one
 					// Avoids having to run through loops
 					toggleGroups.push(group);
+					// Check if a window has been opened
+					if ($(this).hasClass(windowControlClass)) {
+						// Add the window to the windows collection array
+						windows.push(target);
+					}
 				} else {
 					// Set target to inactive
 					$(target).removeClass(toggleLocalClass);
+					// Check if a window has been closed
+					if ($(this).hasClass(windowControlClass)) {
+						// Remove this particular window from the windows collection array
+						FOS.removeValueFromArray(windows, target);
+					}
 					// Run through all toggles and check if at least one toggle is active for the global set icon
 					$toggleLocalControl.each(function () {
 						if ($(this).data("toggles").active === true) {
@@ -158,6 +171,17 @@
 					$globalSetIcon.addClass(globalSetIconClass);
 				} else {
 					$globalSetIcon.removeClass(globalSetIconClass);
+				}
+				// Check if at least one window is open, if yes, activate the control lamp in the station
+				// Otherwise, if all windows are closed, set the control lamp in the station to inactive
+				if (typeof windows !== undefined && windows !== null && windows.length !== null && windows.length > 0) {
+					if (!$stationGroupWindows.hasClass(toggleLocalClass)) {
+						$stationGroupWindows.addClass(toggleLocalClass);
+					}
+				} else {
+					if ($stationGroupWindows.hasClass(toggleLocalClass)) {
+						$stationGroupWindows.removeClass(toggleLocalClass);
+					}
 				}
 				// Update station data of currently active groups
 				var toggleGroupsString = toggleGroups.join(" ");
@@ -228,6 +252,7 @@
 					emergencyMessages.push(emergencyMessageSetHtml);
 					// Add message to globalEmergencyMessagesLog array
 					globalEmergencyMessagesLog.push(emergencyMessageSetHtml);
+
 					// Set content for modal's body with all emergencyMessages, no need for a loop or something like that :)
 					$emergencyMessageModal.find(".modal-body").html("<ul class=\"list-group\">" + emergencyMessages + "</ul>");
 					// Open modal with all messages from collection
@@ -378,7 +403,6 @@
 				}
 			} else {
 				console.log("No \"element\" parameter set!");
-
 			}
 		};
 
