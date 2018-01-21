@@ -1,10 +1,28 @@
+# Simulation of an AAL (Ambient Assisted Living) system
+
 * Please follow the following instructions to ensure a correct workflow.
 * Also keep this file updated for your own good.
 * This is a work in progress document.
 
-# Features/requirements and how to implement them
+---------------------------------------
 
-## Default toggles
+
+## Technical requirements
+
+* Modern webbrowser
+	* Tested under Google Chrome 63.0.3239.132.
+	* Since this is an offline and one-time presentation/simulation, there are no intentions to support more than one browser. This saves development time and reduces the load of needed resources and therefore increases the performance.
+* (Local) webserver
+	* Tested under Apache 2.4.27.
+	* If you don't have a webserver, you can also access the file directly inside your browser via the `file:` protocol.
+		* Depending on your browser it might work out of the box (e.g. Firefox Developer Edition), for Google Chrome you need to add `"--allow-file-access-from-files` to the launch options/target like this:
+		![](DOC-Google-Chrome-Settings.png)
+* JavaScript needs to be enabled
+
+
+## Features/requirements and how to implement them
+
+### Default toggles
 Define toggles to be active by default for e.g. devices needing constant electricity
 
 #### What you need:
@@ -38,7 +56,7 @@ globalControlResetExclude = [
 ---------------------------------------
 
 
-## Global station
+### Global station
 Shows if at least one toggle is active in the specified section
 
 #### What you need:
@@ -61,7 +79,7 @@ data-group="station-group-kitchen"></div>
 ---------------------------------------
 
 
-## Emergency toggle
+### Emergency toggle
 * In every section should be an emergency toggle.
 * Activating it opens a modal (popup) with a warning message and activates the station lamp.
 * After closing the modal
@@ -102,7 +120,7 @@ data-group="station-group-kitchen"></div>
 ---------------------------------------
 
 
-## Global timer
+### Global timer
 
 Simulates a morning (wake-up) and a night (sleep).
 During night until morning all possible local control toggles (devices, aka globalTimerToggles) will be set to disabled an inactive.
@@ -122,3 +140,21 @@ This refers to all local control toggles, that are NOT excluded from the global 
 	so if you have 5 seconds start and 10 seconds stop,
 	the action will happen 10 seconds after enabling the globalTimerToggles
 * Reload the browser by yourself or use the refresh button on the right
+
+---------------------------------------
+
+
+## Developer and author
+
+* Julian Wittorf (FOS-17-a @ RBZ-Technik Kiel)
+	* E-Mail: [jwittorf@die-netzwerkstatt.de](mailto:jwittorf@die-netzwerkstatt.de)
+
+---------------------------------------
+
+
+## Contributors
+
+* Phillip Beeck (FOS-17-a @ RBZ-Technik Kiel)
+	* E-Mail: [pb151092@gmail.com](mailto:pb151092@gmail.com)
+* Tobias Eichler (FOS-17-a @ RBZ-Technik Kiel)
+	* E-Mail: [tobiaseichle@gmail.com](mailto:tobiaseichle@gmail.com)
