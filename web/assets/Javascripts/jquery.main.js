@@ -387,6 +387,9 @@
 						if (status !== "success") {
 							var msg = "Sorry but something went wrong! ";
 							console.log(msg + xhr.status + " " + xhr.statusText);
+						} else {
+							// Remove ajax-loader.gif
+							$(this).addClass("ajax-content-loaded");
 						}
 						if (defaultToggles === true) {
 							// Need to call default toggles after the ajax call, otherwise won't init correctly

@@ -1,3 +1,10 @@
 .ajax-content {
 	margin-bottom: $device-margin;
+	// FOS TODO: Set a nice looking loading graphic
+	background: transparent url("../Images/ajax-loader.gif") center center no-repeat;
+	min-height: 50px;
+	&.ajax-content-loaded {
+		background: transparent;
+		min-height: 0;
+	}
 }
