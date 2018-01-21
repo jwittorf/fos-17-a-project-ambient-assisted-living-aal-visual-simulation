@@ -13,8 +13,8 @@ Define toggles to be active by default for e.g. devices needing constant electri
 #### Example:
 ```js
 defaultTogglesOn = [
-    "#kitchen-stove-control-hotplate-two",
-    "#kitchen-stove-control-oven-one"
+    "#kitchen-fridge-control-signal-one",
+    "#kitchen-freezer-control-signal-one"
 ];
 ```
 
@@ -30,7 +30,8 @@ Define toggles not to be reset by the global reset button, e.g. devices needing 
 #### Example:
 ```js
 globalControlResetExclude = [
-    "#kitchen-stove-control-hotplate-two"
+    "#kitchen-fridge-control-signal-one",
+    "#kitchen-freezer-control-signal-one"
 ];
 ```
 
@@ -43,6 +44,9 @@ Shows if at least one toggle is active in the specified section
 #### What you need:
 * On all new `toggle-local-control` elements make sure to follow the markup and add a correct `data-group`.
 	* The `data-group` needs to be the same in the entire section!
+		* Make sure to set the correct id for the `.hallway-station-lamp`, corresponding to the `data-group`
+	* For windows, make sure to add the class `window-control` (defined also as `windowControlClass` in `jquery.main.js`)
+	* For emergency toggles, not need to add anything else, they use the `emergencyMessages` array
 * That's it, the script will take care of everything else.
 
 #### Example:
@@ -59,17 +63,17 @@ data-group="station-group-kitchen"></div>
 
 ## Emergency toggle
 * In every section should be an emergency toggle.
-* Activating it opens a modal (popup) with a warning message.
+* Activating it opens a modal (popup) with a warning message and activates the station lamp.
 * After closing the modal
 	* The area starts to blink
 	* An entry is added to the log area
 * If a different emergency toggle is triggered, the message from the toggle before will still show up in the modal!
 * To remove the blinking and the "old" messages from the modal, just disable to activated toggle.
 	* There will also be a new entry in the log, claiming the emergency has been resolved.
-* 
+* After resolving all emergencies, the station lamp goes inactive again
 
 #### What you need:
-* wrapping class: `[section]-emergency-content`
+* wrapping class: `[section]-emergency-content emergency-content`
 * wrapping id for name/heading: `[section]-emergency-name`
 * `toggle` element with
 	* class: additional `toggle-local-emergency` 
@@ -79,7 +83,7 @@ data-group="station-group-kitchen"></div>
 
 #### Example:
 ```html
-<div class="kitchen-emergency-content">
+<div class="kitchen-emergency-content emergency-content">
     <div class="row">
         <div class="col-xs-7">
             <div id="kitchen-emergency-name">
