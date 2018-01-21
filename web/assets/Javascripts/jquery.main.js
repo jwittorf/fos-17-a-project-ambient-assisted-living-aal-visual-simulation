@@ -174,15 +174,7 @@
 				}
 				// Check if at least one window is open, if yes, activate the control lamp in the station
 				// Otherwise, if all windows are closed, set the control lamp in the station to inactive
-				if (typeof windows !== undefined && windows !== null && windows.length !== null && windows.length > 0) {
-					if (!$stationGroupWindows.hasClass(toggleLocalClass)) {
-						$stationGroupWindows.addClass(toggleLocalClass);
-					}
-				} else {
-					if ($stationGroupWindows.hasClass(toggleLocalClass)) {
-						$stationGroupWindows.removeClass(toggleLocalClass);
-					}
-				}
+				FOS.checkArrayNotEmptyTriggerClassToId(windows, $stationGroupWindows, toggleLocalClass);
 				// Update station data of currently active groups
 				var toggleGroupsString = toggleGroups.join(" ");
 				$station.data("toggle-groups", toggleGroupsString);
@@ -272,15 +264,7 @@
 				}
 				// Check if at least one emergency has been triggered, if yes, activate the control lamp in the station
 				// Otherwise, if no emergency is active, set the control lamp in the station to inactive
-				if (typeof emergencyMessages !== undefined && emergencyMessages !== null && emergencyMessages.length !== null && emergencyMessages.length > 0) {
-					if (!$stationGroupEmergencies.hasClass(toggleLocalClass)) {
-						$stationGroupEmergencies.addClass(toggleLocalClass);
-					}
-				} else {
-					if ($stationGroupEmergencies.hasClass(toggleLocalClass)) {
-						$stationGroupEmergencies.removeClass(toggleLocalClass);
-					}
-				}
+				FOS.checkArrayNotEmptyTriggerClassToId(emergencyMessages, $stationGroupEmergencies, toggleLocalClass);
 				// Output updated globalEmergencyMessagesLog
 				$globalEmergencyMessages.children(".list-group").html(globalEmergencyMessagesLog);
 			});
@@ -414,6 +398,27 @@
 				}
 			} else {
 				console.log("No \"element\" parameter set!");
+			}
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Helper function to add a class to an id if the given array is not empty
+		 * ** If the array is empty, remove the class from the id
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.checkArrayNotEmptyTriggerClassToId = function (array, id, className) {
+			// Check if the array is NOT empty
+			// If yes, add the class to the id
+			// If no (empty), remove the class from the id
+			if (typeof array !== undefined && array !== null && array.length !== null && array.length > 0) {
+				if (!id.hasClass(className)) {
+					id.addClass(className);
+				}
+			} else {
+				if (id.hasClass(className)) {
+					id.removeClass(className);
+				}
 			}
 		};
 
