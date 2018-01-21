@@ -222,6 +222,7 @@
 		 */
 		FOS.initLocalEmergency = function () {
 			$toggleLocalEmergency.on("toggle", function (e, active) {
+				var $stationGroupEmergencies = $("#station-group-emergencies");
 				// Build emergency message (for setting and unsetting)
 				// Only value of id
 				var localEmergency = $(this).attr("id");
@@ -252,7 +253,6 @@
 					emergencyMessages.push(emergencyMessageSetHtml);
 					// Add message to globalEmergencyMessagesLog array
 					globalEmergencyMessagesLog.push(emergencyMessageSetHtml);
-
 					// Set content for modal's body with all emergencyMessages, no need for a loop or something like that :)
 					$emergencyMessageModal.find(".modal-body").html("<ul class=\"list-group\">" + emergencyMessages + "</ul>");
 					// Open modal with all messages from collection
@@ -269,6 +269,17 @@
 					FOS.removeValueFromArray(emergencyMessages, emergencyMessageSetHtml);
 					// Add message to globalEmergencyMessagesLog array
 					globalEmergencyMessagesLog.push(emergencyMessageUnsetHtml);
+				}
+				// Check if at least one emergency has been triggered, if yes, activate the control lamp in the station
+				// Otherwise, if no emergency is active, set the control lamp in the station to inactive
+				if (typeof emergencyMessages !== undefined && emergencyMessages !== null && emergencyMessages.length !== null && emergencyMessages.length > 0) {
+					if (!$stationGroupEmergencies.hasClass(toggleLocalClass)) {
+						$stationGroupEmergencies.addClass(toggleLocalClass);
+					}
+				} else {
+					if ($stationGroupEmergencies.hasClass(toggleLocalClass)) {
+						$stationGroupEmergencies.removeClass(toggleLocalClass);
+					}
 				}
 				// Output updated globalEmergencyMessagesLog
 				$globalEmergencyMessages.children(".list-group").html(globalEmergencyMessagesLog);
