@@ -68,7 +68,9 @@
 			// Define local toggles excluded from reset
 			globalControlResetExclude = [
 				"#kitchen-fridge-control-signal-one",
-				"#kitchen-freezer-control-signal-one"
+				"#kitchen-freezer-control-signal-one",
+				"#hallway-frontdoor-control-signal-one",
+				"." + windowControlClass
 			];
 			// Join elements to jQuery object/select
 			$globalControlResetExclude = $toggleLocalControl.not($(globalControlResetExclude.join(", ")));
