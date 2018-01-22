@@ -60,7 +60,7 @@ globalControlResetExclude = [
 Shows if at least one toggle is active in the specified section
 
 #### What you need:
-* On all new `toggle-local-control` elements make sure to follow the markup and add a correct `data-group`.
+* On all new `toggle-local-control` elements make sure to follow the markup and add a correct `data-group`, the `data-target` and the `data-name` (see [Check on front door lock](#check-on-front-door-lock)).
 	* The `data-group` needs to be the same in the entire section!
 		* Make sure to set the correct id for the `.hallway-station-lamp`, corresponding to the `data-group`
 	* For windows, make sure to add the class `window-control` (defined also as `windowControlClass` in `jquery.main.js`)
@@ -72,6 +72,7 @@ Shows if at least one toggle is active in the specified section
 <div
 class="toggle toggle-light toggle-local-control kitchen-stove-control"
 id="kitchen-stove-control-hotplate-one"
+data-name="#kitchen-window-name"
 data-target="#kitchen-stove-hotplate-one"
 data-group="station-group-kitchen"></div>
 ```
@@ -115,6 +116,29 @@ data-group="station-group-kitchen"></div>
         </div>
     </div>
 </div>
+```
+
+---------------------------------------
+
+
+### Check on front door lock
+If you try to lock the front door, there is a check for any not excluded devices beeing active.
+A modal popup will appear and tell you what devices need to be set inactive before you can close the door.
+
+#### What you need:
+* id for all devices names (`<h4>`): `[section]-[device]-name`
+* data-name: `#[section-device-name]`
+
+#### Example:
+```html
+<h4 id="kitchen-window-name">Fenster</h4>
+<!-- ... -->
+<div
+	class="toggle toggle-light toggle-local-control kitchen-window-control window-control"
+	id="kitchen-window-control-signal-one"
+	data-name="#kitchen-window-name"
+	data-target="#kitchen-window-signal-one"
+	data-group="station-group-kitchen"></div>
 ```
 
 ---------------------------------------
