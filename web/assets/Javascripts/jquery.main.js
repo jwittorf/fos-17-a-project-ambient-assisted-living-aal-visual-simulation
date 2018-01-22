@@ -343,7 +343,7 @@
 					// Add message to globalEmergencyMessagesLog array
 					globalEmergencyMessagesLog.push(emergencyMessageSetHtml);
 					// Set content for modal's body with all emergencyMessages, no need for a loop or something like that :)
-					$emergencyMessageModal.find(".modal-body").html("<ul class=\"list-group\">" + emergencyMessages + "</ul>");
+					$emergencyMessageModal.find(".modal-body .list-group").html(emergencyMessages);
 					// Open modal with all messages from collection
 					$emergencyMessageModal.modal();
 					// After closing the modal ...
