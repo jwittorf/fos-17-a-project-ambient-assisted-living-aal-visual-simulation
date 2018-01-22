@@ -6,6 +6,7 @@
 		FOS.initToggleVars();
 		FOS.initToggles();
 		FOS.initControlSectionLocal();
+		FOS.initControlFrontdoorLock();
 		FOS.initControlSectionGlobalReset();
 		FOS.initLocalEmergency();
 		FOS.initGlobalTimer();

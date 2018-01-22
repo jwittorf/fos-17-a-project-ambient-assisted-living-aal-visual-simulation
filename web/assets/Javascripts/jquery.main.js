@@ -54,6 +54,10 @@
 			$toggleLocalEmergency = $(".toggle-local-emergency");
 			toggleLocalClass = "alert-danger";
 
+			// Front door lock toggle
+			$toggleFrontdoorLockControl = $(".hallway-frontdoor-control-lock");
+			frontdoorLockControlIcon = "<i class=\"glyphicon glyphicon-lock\"></i>";
+
 			// Control station
 			$station = $(".station");
 			windowControlClass = "window-control";
@@ -188,6 +192,36 @@
 					// Otherwise if group isn't (anymore) in the array and class is already set,
 					// remove the class
 					$groupId.removeClass(toggleLocalClass);
+				}
+			});
+		};
+
+		/**
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 * ++ Control front door lock
+		 * +++++++++++++++++++++++++++++++++++++++++++
+		 */
+		FOS.initControlFrontdoorLock = function () {
+			// Check front door lock control on toggle event
+			$toggleFrontdoorLockControl.on("toggle", function (e, active) {
+				// Specify target
+				var target = $(this).data("target-icon");
+				// Specify element group
+				var $targetId = $(target);
+				// Specify group
+				var group = $(this).data("group-icon");
+				// Specify element group
+				var $groupId = $("#" + group);
+				if (active) {
+					// Add lock icon to station group
+					$groupId.html(frontdoorLockControlIcon);
+					// Set target to active
+					$targetId.html(frontdoorLockControlIcon);
+				} else {
+					// Remove lock icon from station group
+					$groupId.html("");
+					// Remove lock icon from station target
+					$targetId.html("");
 				}
 			});
 		};
