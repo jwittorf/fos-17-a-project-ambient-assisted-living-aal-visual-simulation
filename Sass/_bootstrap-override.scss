@@ -10,23 +10,31 @@ $icon-font-path: "../Fonts/vendor/bootstrap/";
 
 // Brand-colors
 $brand-primary: #0d0f21;
+$brand-primary-lighten: #0e0f22;
 $brand-danger: #aa1212;
 //$brand-success: ;
 //$brand-info: ;
 
+$gray: rgba($brand-primary-lighten, .5);
+
 // Font
-//$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif: "Franklin Gothic Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif-alternative: "Franklin Gothic Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 //$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //$font-size-base:          14px !default;
 //$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 //$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
+$headings-font-family: $font-family-sans-serif-alternative;
+$headings-color: $brand-primary;
+
+
 // Text-Colors
-//$text-color: $gray-dark !default;
+$text-color: $gray;
 //$text-muted: $gray-light !default;
 
 // Links
-//$link-color: $brand-primary !default;
+$link-color: $brand-primary-lighten;
 //$link-hover-color: darken($link-color, 15%) !default;
 //$link-hover-decoration: underline !default;
 
