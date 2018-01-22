@@ -120,7 +120,7 @@
 									<h3>Flur</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<h4>Haustür</h4>
+											<h4 id="hallway-frontdoor-name">Haustür</h4>
 											<div class="hallway-frontdoor-content ajax-content"></div>
 										</div>
 									</div>
@@ -154,7 +154,7 @@
 									<h3>Wohnzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<h4>Fenster</h4>
+											<h4 id="livingroom-window-name">Fenster</h4>
 											<div class="livingroom-window-content ajax-content"></div>
 										</div>
 									</div>
@@ -179,7 +179,7 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-12">
-											<h4>Fernseher</h4>
+											<h4 id="livingroom-tv-name">Fernseher</h4>
 											<div class="livingroom-tv-content ajax-content"></div>
 										</div>
 									</div>
@@ -191,7 +191,7 @@
 									<h3>Schlafzimmer</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<h4>Fenster</h4>
+											<h4 id="bedroom-window-name">Fenster</h4>
 											<div class="bedroom-window-content ajax-content"></div>
 										</div>
 									</div>
@@ -216,11 +216,11 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4>Nachttisch 1</h4>
+											<h4 id="bedroom-nightstand1-name">Nachttisch 1</h4>
 											<div class="bedroom-nightstand1-content ajax-content"></div>
 										</div>
 										<div class="col-xs-6">
-											<h4>Nachttisch 2</h4>
+											<h4 id="bedroom-nightstand2-name">Nachttisch 2</h4>
 											<div class="bedroom-nightstand2-content ajax-content"></div>
 										</div>
 									</div>
@@ -236,7 +236,7 @@
 									<h3>Küche</h3>
 									<div class="row">
 										<div class="col-xs-12">
-											<h4>Fenster</h4>
+											<h4 id="kitchen-window-name">Fenster</h4>
 											<div class="kitchen-window-content ajax-content"></div>
 										</div>
 									</div>
@@ -260,17 +260,17 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<h4>Waschmaschine</h4>
+											<h4 id="kitchen-washingmachine-name">Waschmaschine</h4>
 											<div class="kitchen-washingmachine-content ajax-content"></div>
-											<h4>Geschirrspüler</h4>
+											<h4 id="kitchen-dishwasher-name">Geschirrspüler</h4>
 											<div class="kitchen-dishwasher-content ajax-content"></div>
 										</div>
 										<div class="col-xs-6">
-											<h4>Kühlschrank</h4>
+											<h4 id="kitchen-fridge-name">Kühlschrank</h4>
 											<div class="kitchen-fridge-content ajax-content"></div>
-											<h4>Herd mit Ofen</h4>
+											<h4 id="kitchen-stove-name">Herd mit Ofen</h4>
 											<div class="kitchen-stove-content ajax-content"></div>
-											<h4>Gefriertruhe</h4>
+											<h4 id="kitchen-freezer-name">Gefriertruhe</h4>
 											<div class="kitchen-freezer-content ajax-content"></div>
 										</div>
 									</div>
@@ -298,6 +298,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-stove-control"
 									id="kitchen-stove-control-oven-one"
+									data-name="#kitchen-stove-name"
 									data-target="#kitchen-stove-oven-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -310,6 +311,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-stove-control"
 									id="kitchen-stove-control-hotplate-one"
+									data-name="#kitchen-stove-name"
 									data-target="#kitchen-stove-hotplate-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -322,6 +324,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-stove-control"
 									id="kitchen-stove-control-hotplate-two"
+									data-name="#kitchen-stove-name"
 									data-target="#kitchen-stove-hotplate-two"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -334,6 +337,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-stove-control"
 									id="kitchen-stove-control-hotplate-three"
+									data-name="#kitchen-stove-name"
 									data-target="#kitchen-stove-hotplate-three"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -346,6 +350,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-stove-control"
 									id="kitchen-stove-control-hotplate-four"
+									data-name="#kitchen-stove-name"
 									data-target="#kitchen-stove-hotplate-four"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -358,6 +363,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-fridge-control"
 									id="kitchen-fridge-control-signal-one"
+									data-name="#kitchen-fridge-name"
 									data-target="#kitchen-fridge-signal-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -370,6 +376,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-freezer-control"
 									id="kitchen-freezer-control-signal-one"
+									data-name="#kitchen-freezer-name"
 									data-target="#kitchen-freezer-signal-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -382,6 +389,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-washingmachine-control"
 									id="kitchen-washingmachine-control-signal-one"
+									data-name="#kitchen-washingmachine-name"
 									data-target="#kitchen-washingmachine-signal-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -394,6 +402,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-dishwasher-control"
 									id="kitchen-dishwasher-control-signal-one"
+									data-name="#kitchen-dishwasher"
 									data-target="#kitchen-dishwasher-signal-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -406,6 +415,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control kitchen-window-control window-control"
 									id="kitchen-window-control-signal-one"
+									data-name="#kitchen-window-name"
 									data-target="#kitchen-window-signal-one"
 									data-group="station-group-kitchen"></div>
 							</div>
@@ -423,6 +433,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control bedroom-nightstand1-control"
 									id="bedroom-nightstand1-control-signal-one"
+									data-name="#bedroom-nightstand1-name"
 									data-target="#bedroom-nightstand1-signal-one"
 									data-group="station-group-bedroom"></div>
 							</div>
@@ -435,6 +446,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control bedroom-nightstand2-control"
 									id="bedroom-nightstand2-control-signal-one"
+									data-name="#bedroom-nightstand2-name"
 									data-target="#bedroom-nightstand2-signal-one"
 									data-group="station-group-bedroom"></div>
 							</div>
@@ -447,6 +459,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control bedroom-window-control window-control"
 									id="bedroom-window-control-signal-one"
+									data-name="#bedroom-window-name"
 									data-target="#bedroom-window-signal-one"
 									data-group="station-group-bedroom"></div>
 							</div>
@@ -464,6 +477,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control livingroom-tv-control"
 									id="livingroom-tv-control-signal-one"
+									data-name="#livingroom-tv-name"
 									data-target="#livingroom-tv-signal-one"
 									data-group="station-group-livingroom"></div>
 							</div>
@@ -476,6 +490,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control livingroom-window-control window-control"
 									id="livingroom-window-control-signal-one"
+									data-name="#livingroom-window-name"
 									data-target="#livingroom-window-signal-one"
 									data-group="station-group-livingroom"></div>
 							</div>
@@ -493,6 +508,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control hallway-frontdoor-control"
 									id="hallway-frontdoor-control-signal-one"
+									data-name="#hallway-frontdoor-name"
 									data-target="#hallway-frontdoor-signal-one"
 									data-group="station-group-hallway"></div>
 							</div>
@@ -505,7 +521,7 @@
 								<div
 									class="toggle toggle-light toggle-local-control hallway-frontdoor-control hallway-frontdoor-control-lock"
 									id="hallway-frontdoor-control-signal-two"
-									data-target="#hallway-frontdoor-signal-one"
+									data-target-icon="#hallway-frontdoor-signal-one"
 									data-group-icon="station-group-hallway"></div>
 							</div>
 						</div>
@@ -524,6 +540,25 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title">Not-Taster betätigt!</h4>
+				</div>
+				<div class="modal-body">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Meldung schließen</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="notification-message">
+	<div class="modal fade" tabindex="-1" role="dialog" id="notification-message-modal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Meldung schließen">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Unbeaufsichtigte Benutzung erkannt!</h4>
 				</div>
 				<div class="modal-body">
 				</div>

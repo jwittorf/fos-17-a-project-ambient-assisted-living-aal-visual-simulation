@@ -55,7 +55,8 @@
 			toggleLocalClass = "alert-danger";
 
 			// Front door lock toggle
-			$toggleFrontdoorLockControl = $(".hallway-frontdoor-control-lock");
+			toggleFrontdoorLockControl = "hallway-frontdoor-control-lock";
+			$toggleFrontdoorLockControl = $("." + toggleFrontdoorLockControl);
 			frontdoorLockControlIcon = "<i class=\"glyphicon glyphicon-lock\"></i>";
 
 			// Control station
@@ -74,6 +75,7 @@
 				"#kitchen-fridge-control-signal-one",
 				"#kitchen-freezer-control-signal-one",
 				"#hallway-frontdoor-control-signal-one",
+				"#hallway-frontdoor-control-signal-two",
 				"." + windowControlClass
 			];
 			// Join elements to jQuery object/select
@@ -93,6 +95,20 @@
 			globalEmergencyMessagesLog = [];
 			emergencyMessages = [];
 			$emergencyMessageModal = $("#emergency-message-modal");
+
+			// Global notification messages
+			$notificationMessageModal = $("#notification-message-modal");
+			togglesActive = [];
+			togglesActiveNotification = [];
+			// Define local toggles excluded from notifications
+			globalToggleNotificationExclude = [
+				"#kitchen-fridge-control-signal-one",
+				"#kitchen-freezer-control-signal-one",
+				"#hallway-frontdoor-control-signal-one",
+				"#hallway-frontdoor-control-signal-two"
+			];
+			// Join elements to jQuery object/select
+			$globalToggleNotificationExclude = $toggleLocalControl.not($(globalToggleNotificationExclude.join(", ")));
 
 			// Global timer
 			$globalTimerSet = $("#global-timer-set");
@@ -204,24 +220,69 @@
 		FOS.initControlFrontdoorLock = function () {
 			// Check front door lock control on toggle event
 			$toggleFrontdoorLockControl.on("toggle", function (e, active) {
+				$this = $(this);
 				// Specify target
-				var target = $(this).data("target-icon");
+				var target = $this.data("target-icon");
 				// Specify element group
-				var $targetId = $(target);
+				// var $targetId = $(target);
 				// Specify group
-				var group = $(this).data("group-icon");
+				var group = $this.data("group-icon");
 				// Specify element group
 				var $groupId = $("#" + group);
+				// Corresponding name (with # given)
 				if (active) {
 					// Add lock icon to station group
 					$groupId.html(frontdoorLockControlIcon);
-					// Set target to active
-					$targetId.html(frontdoorLockControlIcon);
+					// Add lock icon to target
+					// $targetId.html(frontdoorLockControlIcon);
+					// Check for active toggles that are excluded from notification
+					// Aka "What shouldn't be active when leaving the house?"
+					$globalToggleNotificationExclude.each(function () {
+						var $this = $(this);
+						var toggleData = $this.data("toggles");
+						// Check if the toggle is active
+						if (toggleData.active === true) {
+							var name = $this.data("name");
+							// Get the toggles name from the in data specified element
+							var nameText = $(name).text();
+							var group = $this.data("group");
+							var $group = $("#" + group);
+							// Get the toggles room from the in data specified element's previous sibling
+							var $groupText = $group.prev("h5").text();
+							// togglesActive.push($this);
+							togglesActiveNotification.push("<li class=\"list-group-item list-group-item-danger\" data-target=\"" + target + "\"><i class=\"glyphicon glyphicon-remove\"></i> \"" + nameText + "\" in Raum \"" + $groupText +"\"</li>");
+						}
+					});
+					if (typeof togglesActiveNotification !== undefined && togglesActiveNotification !== null && togglesActiveNotification.length !== null && togglesActiveNotification.length > 0) {
+						var notificationMessageOnActive = "<h3>Folgende Geräte sind noch aktiv:</h3><ul class=\"list-group\"></ul><p>Bitte die Geräte ausschalten und die Tür erneut verriegeln.</p>";
+						$notificationMessageModal.find(".modal-body").html(notificationMessageOnActive);
+						$notificationMessageModal.find(".modal-body .list-group").html(togglesActiveNotification);
+						$notificationMessageModal.modal();
+						// Don't make the toggle active if there are still devices running
+						$this.toggles(false);
+					} else {
+						// Disable the toggles until unlocking the front door
+						$toggleLocalControl.each(function () {
+							if (!$(this).hasClass(toggleFrontdoorLockControl)) {
+								$(this).toggleClass("disabled", true);
+							}
+						});
+					}
 				} else {
 					// Remove lock icon from station group
 					$groupId.html("");
 					// Remove lock icon from station target
-					$targetId.html("");
+					// $targetId.html("");
+					if (typeof togglesActiveNotification !== undefined && togglesActiveNotification !== null && togglesActiveNotification.length !== null && togglesActiveNotification.length > 0) {
+						// Unset the active notifications
+						togglesActiveNotification = [];
+					}
+					// Enable toggles after unlocking the door
+					$toggleLocalControl.each(function () {
+						if (!$(this).hasClass(toggleFrontdoorLockControl)) {
+							$(this).toggleClass("disabled", false);
+						}
+					});
 				}
 			});
 		};
