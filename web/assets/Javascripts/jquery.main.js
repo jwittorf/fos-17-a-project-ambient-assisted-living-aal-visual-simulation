@@ -117,11 +117,11 @@
 			// Check every local toggle on toggle event
 			$toggleLocalControl.on("toggle", function (e, active) {
 				var $stationGroupWindows = $("#station-group-windows");
-				// Specifiy target for single toggle
+				// Specify target for single toggle
 				var target = $(this).data("target");
-				// Specifiy group for single toggle
+				// Specify group for single toggle
 				var group = $(this).data("group");
-				// Specifiy element group for single toggle
+				// Specify element group for single toggle
 				var $groupId = $("#" + group);
 				if (active) {
 					// Set target to active
@@ -231,11 +231,11 @@
 				// Trimmed text of corresponding name, only with the locality
 				var localEmergencyNameText = $localEmergencyName.text().trim().replace("Not-Taster ", "");
 				// Concatenated emergency message set
-				var emergencyMessageSet = "Meldung in: <strong>" + localEmergencyNameText + "</strong>";
+				var emergencyMessageSet = "Not-Taster in \"<strong>" + localEmergencyNameText + "</strong>\" ausgelöst";
 				// Add html to emergencyMessageSet
 				var emergencyMessageSetHtml = "<li class=\"list-group-item list-group-item-danger\"><i class=\"glyphicon glyphicon-remove\"></i> " + emergencyMessageSet + "</li>";
 				// Concatenated emergency message unset
-				var emergencyMessageUnset = "Meldung in: <strong>" + localEmergencyNameText + "</strong> aufgelöst.";
+				var emergencyMessageUnset = "Not-Taster in \"<strong>" + localEmergencyNameText + "</strong>\" aufgelöst.";
 				// Add html to emergencyUnsetMessage
 				var emergencyMessageUnsetHtml = "<li class=\"list-group-item list-group-item-success\"><i class=\"glyphicon glyphicon-ok\"></i> " + emergencyMessageUnset + "</li>";
 				// If toggle was activated, add message to collection, open modal with all messages
