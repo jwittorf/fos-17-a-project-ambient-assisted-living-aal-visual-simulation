@@ -46,14 +46,15 @@
 								<div id="global-timer">
 									<div class="form-horizontal">
 										<div class="input-group">
-															<span class="input-group-addon">
-																<i class="glyphicon glyphicon-time"></i>
-															</span>
+											<span class="input-group-addon">
+												<i class="glyphicon glyphicon-time"></i>
+											</span>
 											<!-- Start field -->
 											<label for="global-timer-start" class="sr-only"> Start
 												in Sekunden</label>
-											<span class="input-group-addon"><i
-													class="glyphicon glyphicon-play"></i></span>
+											<span class="input-group-addon">
+												<i class="glyphicon glyphicon-play"></i>
+											</span>
 											<input type="number" min="0" max="1000"
 												   class="form-control"
 												   aria-label="Zeitschaltuhr Start in Sekunden"
@@ -62,8 +63,9 @@
 											<!-- Stop field -->
 											<label for="global-timer-stop" class="sr-only"> Stop in
 												Sekunden</label>
-											<span class="input-group-addon"><i
-													class="glyphicon glyphicon-stop"></i></span>
+											<span class="input-group-addon">
+												<i class="glyphicon glyphicon-stop"></i>
+											</span>
 											<input type="number" min="0" max="1000"
 												   class="form-control"
 												   aria-label="Zeitschaltuhr Stop in Sekunden"
@@ -71,32 +73,34 @@
 												   name="global-timer-stop">
 											<!-- Set checkbox -->
 											<span class="input-group-addon">
-																<label
-																	for="global-timer-set">Zeitschaltuhr aktivieren</label>
-																<input type="checkbox"
-																	   id="global-timer-set"
-																	   name="global-timer-set"
-																	   value="global-timer-active"
-																	   data-targetstart="#global-timer-start"
-																	   data-targetstop="#global-timer-stop">
-															</span>
+												<label
+													for="global-timer-set">Zeitschaltuhr aktivieren</label>
+												<input type="checkbox"
+													   id="global-timer-set"
+													   name="global-timer-set"
+													   value="global-timer-active"
+													   data-targetstart="#global-timer-start"
+													   data-targetstop="#global-timer-stop">
+											</span>
 											<!-- Reset button -->
 											<label for="global-timer-refresh" class="sr-only"> Neu
 												laden</label>
-											<span class="input-group-btn"><button type="button"
-																				  class="btn btn-default"><i
-														class="glyphicon glyphicon-refresh"
-														onClick="location.reload()"></i></button></span>
+											<span class="input-group-btn">
+												<button type="button" class="btn btn-default"><i
+													class="glyphicon glyphicon-refresh"
+													onClick="location.reload()"
+													id="global-timer-refresh"></i>
+												</button>
+											</span>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-xs-3">
 								<div id="global-set">
-															<span
-																class="btn btn-default btn-block transition">Status: <i
-																	class="glyphicon glyphicon-alert"
-																	id="global-set-icon"></i></span>
+									<span class="btn btn-default btn-block transition">Status: <i
+										class="glyphicon glyphicon-alert"
+										id="global-set-icon"></i></span>
 								</div>
 							</div>
 						</div>
@@ -504,8 +508,9 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Meldung schließen"><span
-							aria-hidden="true">&times;</span></button>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Meldung schließen">
+						<span aria-hidden="true">&times;</span>
+					</button>
 					<h4 class="modal-title">Not-Taster betätigt!</h4>
 				</div>
 				<div class="modal-body">
