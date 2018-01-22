@@ -147,7 +147,7 @@ This refers to all local control toggles, that are NOT excluded from the global 
 ## Developer and author
 
 * Julian Wittorf (FOS-17-a @ RBZ-Technik Kiel)
-	* E-Mail: [jwittorf@die-netzwerkstatt.de](mailto:jwittorf@die-netzwerkstatt.de)
+	* E-Mail: [<jwittorf@die-netzwerkstatt.de>](mailto:jwittorf@die-netzwerkstatt.de)
 
 ---------------------------------------
 
@@ -155,6 +155,20 @@ This refers to all local control toggles, that are NOT excluded from the global 
 ## Contributors
 
 * Phillip Beeck (FOS-17-a @ RBZ-Technik Kiel)
-	* E-Mail: [pb151092@gmail.com](mailto:pb151092@gmail.com)
+	* E-Mail: [<pb151092@gmail.com>](mailto:pb151092@gmail.com)
 * Tobias Eichler (FOS-17-a @ RBZ-Technik Kiel)
-	* E-Mail: [tobiaseichle@gmail.com](mailto:tobiaseichle@gmail.com)
+	* E-Mail: [<tobiaseichle@gmail.com>](mailto:tobiaseichle@gmail.com)
+
+---------------------------------------
+
+
+## License and Copyright
+
+Copyright © Phillip Beeck [<pb151092@gmail.com>](mailto:pb151092@gmail.com), Tobias Eichler [<tobiaseichle@gmail.com>](mailto:tobiaseichle@gmail.com), Julian Wittorf [<jwittorf@die-netzwerkstatt.de>](mailto:jwittorf@die-netzwerkstatt.de)
+
+This work is licensed under a [Creative Commons Attribution-ShareALike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/). See the LICENSE file for more details.
+You are free to share (copy and redistribute the material in any medium or format) and adapt (remix, transform, and build upon the material for any purpose, even commercially.).
+Under the following terms:
+* Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+* ShareALike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+* No additional restrictions - You may not apply legal terms or technological measures that legally restrict other from doing anything the license permits.
