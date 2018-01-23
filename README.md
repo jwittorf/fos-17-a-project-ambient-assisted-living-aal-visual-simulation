@@ -5,6 +5,7 @@ at the school "Regionales Bildungszentrum Technik Kiel" (RBZ-Technik Kiel).
 
 * Please follow the following instructions to ensure a correct workflow.
 * Also keep this file updated for your own good.
+* A live demo can be found at [julian-wittorf.de/fos17a/](http://julian-wittorf.de/fos17a/), the source code is available on [GitHub](https://github.com/jwittorf/fos-17-a-project-ambient-assisted-living-aal-visual-simulation).
 
 ---------------------------------------
 
