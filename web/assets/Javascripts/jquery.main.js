@@ -395,9 +395,13 @@
 					var toggleLocalControl = "#" + $(this).attr("id");
 					// Current toggle local control as jQuery object
 					$toggleLocalControl = $(toggleLocalControl);
+					var classes = $(this).attr("class");
+					var classesCollection = classes.split(" ");
 					// Check if the current toggle local control isn't excluded from the global reset
 					// We want to enable and disable everything, that doesn't need constant electricity
-					if ($.inArray(toggleLocalControl, globalControlResetExclude) === -1) {
+					// Add special case of class, to less time to develop proper solution
+					// FOS TODO: By time, check for the classes in the array, not just the ids
+					if (($.inArray(toggleLocalControl, globalControlResetExclude) === -1) && ($.inArray("." + windowControlClass, globalControlResetExclude) === -1)) {
 						// Add current toggle local control to array of globalTimerToggles as jQuery object
 						globalTimerToggles.push($toggleLocalControl);
 					}
