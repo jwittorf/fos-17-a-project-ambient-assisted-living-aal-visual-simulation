@@ -9,7 +9,6 @@
 
 @-webkit-keyframes emergency-blink {
 	0%, 49% {
-		color: $state-danger-text;
 		background: $state-danger-bg;
 		border: 1px solid $state-danger-border;
 	}
