@@ -1,8 +1,10 @@
 # Simulation of an AAL (Ambient Assisted Living) system
 
+This simulation was developed for the presentation as a visual simulation during final project of the class "FOS-17-a", group "A1"
+at the school "Regionales Bildungszentrum Technik Kiel" (RBZ-Technik Kiel).
+
 * Please follow the following instructions to ensure a correct workflow.
 * Also keep this file updated for your own good.
-* This is a work in progress document.
 
 ---------------------------------------
 
@@ -18,6 +20,8 @@
 		* Depending on your browser it might work out of the box (e.g. Firefox Developer Edition), for Google Chrome you need to add `"--allow-file-access-from-files` to the launch options/target like this:
 		![](DOC-Google-Chrome-Settings.png)
 * JavaScript needs to be enabled
+* Please browse the simulation in a common desktop computer resolution, although it uses responsive breakpoints,
+there is no optimization or so ever for mobile or small devices. This simulation is intended to run on a high resolution projector.
 
 
 ## Features/requirements and how to implement them
@@ -196,3 +200,11 @@ Under the following terms:
 * Attribution - You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 * ShareALike - If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 * No additional restrictions - You may not apply legal terms or technological measures that legally restrict other from doing anything the license permits.
+
+---------------------------------------
+
+
+## Special thanks
+
+We like to thank the [Stadtwerke Kiel](https://www.stadtwerke-kiel.de) for letting us use their facility and materials for our project.
+Shout out to our supervisor Mr. Kayser for checking on us every now and then.
