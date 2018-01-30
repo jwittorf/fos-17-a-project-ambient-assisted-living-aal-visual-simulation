@@ -20,6 +20,8 @@ at the school "Regionales Bildungszentrum Technik Kiel" (RBZ-Technik Kiel).
 	* If you don't have a webserver, you can also access the file directly inside your browser via the `file:` protocol.
 		* Depending on your browser it might work out of the box (e.g. Firefox Developer Edition), for Google Chrome you need to add `"--allow-file-access-from-files` to the launch options/target like this:
 		![](DOC-Google-Chrome-Settings.png)
+	* If you intend to contribute, you need to have [Node.js](https://nodejs.org/) installed in a minimum version of `4.0.0`.
+	`npm` is used for providing and updating asset-dependencies like jquery.
 * JavaScript needs to be enabled
 * Please browse the simulation in a common desktop computer resolution, although it uses responsive breakpoints,
 there is no optimization or so ever for mobile or small devices. This simulation is intended to run on a high resolution projector.
